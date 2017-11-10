@@ -1,0 +1,17 @@
+{
+  "name": "jquery-rotate",
+  "version": "0.1.0",
+  "dependencies": {
+    "jquery": ">=1.9.0"
+  },
+  "homepage": "https://github.com/schickling/jquery-rotate",
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.0",
+    "commit": "b4b21ca0263749ca6876809762b09db971e554e5"
+  },
+  "_source": "https://github.com/schickling/jquery-rotate.git",
+  "_target": "^0.1.0",
+  "_originalSource": "jquery-rotate"
+}
