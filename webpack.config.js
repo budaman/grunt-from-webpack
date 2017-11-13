@@ -30,8 +30,12 @@ module.exports = {
         },
         {
           test: /\.svg$/,
-          loader: 'file-loader'
+          loader: 'file-loader',
+          query:{
+            name:'[name].[ext]',
+            outputPath:'assets/front/images/background/'
         }
+      }
       ]
     },
   plugins: [
