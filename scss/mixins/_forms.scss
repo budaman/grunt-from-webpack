@@ -1,0 +1,20 @@
+@mixin -form-states($color, $valid) {
+  &.form-control {
+    border-color: $input-border-color;
+    border-left-color: $color;
+    color: $color;
+  }
+  & ~ .invalid-feedback,
+  &.invalid-feedback {
+    background: $color;
+    z-index: 2;
+    &:before {
+      border-right-color: $color;
+    }
+  }
+  &,
+  & ~ .label-error,
+  & ~ .custom-control-description {
+    color: $color;
+  }
+}

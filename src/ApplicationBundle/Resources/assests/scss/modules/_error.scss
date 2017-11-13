@@ -1,0 +1,13 @@
+.betconstruct-error{
+  #main{
+    background: $c0;
+    color: $c1;
+    margin: auto;
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 6rem 3rem;
+    @include -breakpoint(md) {
+      padding: 10rem 6rem;
+    }
+  }
+}

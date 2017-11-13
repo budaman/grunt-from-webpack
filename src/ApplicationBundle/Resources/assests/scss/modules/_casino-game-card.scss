@@ -1,0 +1,67 @@
+.card--casino-game {
+  &:hover {
+    .card-overlay {
+      background: rgba($c37, 0.9);
+    }
+    .card-overlay,
+    .card-buttons {
+      opacity: 1;
+    }
+    .card-status {
+      .badge {
+        margin-top: 0.4rem!important;
+      }
+    }
+  }
+  &:not(:hover) {
+    .card-buttons {
+      transform: scale(0.75);
+    }
+  }
+  &.is-large {
+    .card-buttons {
+      padding: 0 $ts-spacer * 3;
+    }
+  }
+  &:not(.is-large) {
+    .btn {
+      font-size: 1.4rem;
+      @include -breakpoint(sm, down) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .card-buttons {
+    padding: 0 $ts-spacer;
+    @include -breakpoint(sm, down) {
+      padding: 0 $ts-spacer * 0.5;
+    }
+    @include -breakpoint(380px, down) {
+      margin-top: 0.3rem;
+    }
+    @include -breakpoint(342px, down) {
+      margin-top: 1rem;
+    }
+  }
+  .card-status {
+    .badge {
+      & + .badge {
+        transition-delay: 0.1s;
+        & + .badge {
+          transition-delay: 0.2s;
+        }
+      }
+    }
+  }
+  .btn {
+    padding: 1.2rem 1rem;
+    white-space: normal;
+  }
+  .btn-link {
+    padding: 0 1rem;
+  }
+  .card-footer {
+    border: none;
+    height: 4.5rem;
+  }
+}

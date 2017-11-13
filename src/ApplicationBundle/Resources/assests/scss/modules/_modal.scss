@@ -1,0 +1,90 @@
+.modal {
+  .close {
+    position: absolute;
+    top: 1.7rem;
+    right: 1.7rem;
+  }
+
+}
+
+.modal-dialog {
+  min-height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+  @include -breakpoint(md, down) {
+    min-height: calc(100vh - 1.5rem);
+    .modal-dialog {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.modal-header {
+  border-bottom: none;
+  @include -breakpoint(sm, down) {
+    padding: 5rem 3rem 0;
+  }
+}
+
+.modal-title {
+  width: 100%;
+}
+
+.modal-content {
+  @include -breakpoint(md, down) {
+    margin-right: $modal-dialog-margin;
+    margin-left: $modal-dialog-margin;
+  }
+}
+
+.modal-body {
+  @include -breakpoint(sm, down) {
+    padding: 1rem 3rem 6rem;
+  }
+}
+
+.modal-body-with-footer{
+  padding: 1rem 5rem 3rem;
+  @include -breakpoint(sm, down) {
+    padding: 1rem 3rem 2rem;
+  }
+}
+
+.modal-footer{
+  flex-wrap: wrap;
+}
+
+
+.modal--transparent {
+  .modal-content {
+    background-color: transparent;
+  }
+  .modal-dialog {
+    width: 100%;
+    padding: 0 $ts-spacer * 0.75;
+    @include -breakpoint(sm) {
+      max-width: 37rem;
+    }
+  }
+}
+
+.page-casino {
+  .modal-backdrop {
+    background-color: $c37;
+    opacity: 0.92;
+  }
+}
+
+.modal--login {
+  .is-no-title {
+    display: none;
+  }
+  .modal-control {
+    position: fixed;
+    top: 0.8rem;
+    right: 2.4rem;
+  }
+}

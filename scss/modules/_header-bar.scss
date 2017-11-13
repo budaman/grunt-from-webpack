@@ -1,0 +1,336 @@
+.header-bar {
+  height: 7rem;
+  @include -breakpoint(md, down) {
+    height: $ts-header-height-mobile;
+  }
+  .logo {
+    img {
+      @include -breakpoint(md, down) {
+        width: 14.5rem
+      }
+    }
+  }
+  .badge {
+    top: -3px;
+    right: -3px;
+    @include -breakpoint(md, down) {
+      right: -0.3rem;
+    }
+  }
+}
+
+.navbar--user,
+.navbar--login {
+  .navbar-collapse {
+    @include -breakpoint(md, down) {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      padding: 0 $ts-spacer * 0.5;
+      text-align: center;
+      .btn--header {
+        margin: $ts-spacer * 0.5;
+      }
+    }
+  }
+}
+
+$navbar-toggler-close: 4px; //need px
+
+.navbar--login,
+.navbar--user {
+  .navbar-toggler {
+    &, * {
+      transition: $ts-transition-default;
+    }
+    .navbar-toggler-close {
+      position: absolute;
+      top: 1.1rem;
+      right: 1.2rem;
+      padding: $navbar-toggler-close 0;
+      z-index: 1;
+      .icon-bar {
+        background-color: $c1;
+        width: 2.8rem;
+        height: 3px; //need px
+        &:nth-child(1) {
+          top: 0.8rem;
+          transform: rotate(-45deg);
+          @include -breakpoint(xs, down) {
+            top: 0.8rem;
+          }
+        }
+        &:nth-child(2) {
+          top: 0.5rem;
+          transform: rotate(45deg);
+        }
+      }
+    }
+    &[aria-expanded="false"] {
+      .navbar-toggler-close {
+        opacity: 0;
+        transform: scale(0);
+      }
+      .navbar-toggler-open {
+        transform: scale(1);
+      }
+    }
+    &[aria-expanded="true"] {
+      .navbar-toggler-close {
+        transform: scale(0.8);
+      }
+      .navbar-toggler-open {
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+  }
+}
+
+//Mobile User Menu
+.navbar--user {
+  $navbar-user-item-padding: 1rem $ts-spacer * 0.75 1rem;
+  $navbar-user-item-border: 1px solid #212326;
+  @include -breakpoint(md, down) {
+    .navbar-nav {
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-height: calc(100vh - 4.5rem);
+      overflow-y: auto;
+      > li {
+        width: 100%;
+        border-top: $navbar-user-item-border;
+      }
+    }
+    .header-bar-link {
+      font-size: 1.6rem;
+      &,
+      &:focus {
+        color: $c1;
+        opacity: 1;
+      }
+      &:hover {
+        color: $c1;
+        opacity: 0.75;
+      }
+    }
+    .header-bar-link {
+      width: 100%;
+      min-height: 4.6rem;
+      padding: $navbar-user-item-padding;
+    }
+    .dropdown {
+      width: 100%;
+      margin: 0;
+    }
+    .dropdown-menu {
+      width: 100%;
+      min-width: 0 !important;
+      &:before {
+        display: none;
+      }
+    }
+    .dropdown-item {
+      padding: $navbar-user-item-padding;
+      border-top: $navbar-user-item-border;
+    }
+    [aria-expanded="true"] {
+      > .icon-arrow-down {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+}
+
+.user-menu-name {
+  max-width: 25rem;
+  @include -breakpoint(lg, down) {
+    max-width: 12rem;
+  }
+  @include -breakpoint(md, down) {
+    max-width: 100%;
+  }
+}
+
+.header-bar-item {
+  @include -breakpoint(md, down) {
+    overflow: hidden;
+    margin-left: 0!important;
+  }
+}
+
+.header-bar-item--balance {
+  .header-bar-link {
+    &:focus,
+    &:hover {
+      opacity: 1!important;
+    }
+  }
+  @include -breakpoint(md, down) {
+    .header-bar-icon .icon{
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.header-bar-item--user,
+.header-bar-item--info {
+  font-size: 1.4rem;
+  ul {
+    > li {
+      > a {
+        color: $c2;
+      }
+    }
+  }
+}
+
+.header-bar-item--user {
+  @include -breakpoint(md) {
+    .dropdown-menu {
+      padding: $ts-spacer * 2;
+    }
+  }
+  @include -breakpoint(md, down) {
+    .dropdown-menu {
+      ul {
+        > li {
+          > a {
+            background: $c1;
+            display: block;
+            padding: 1rem $ts-spacer * 0.75;
+            border-top: 1px solid $c15;
+            color: $c2;
+            font-family: $ts-font-family-secondary;
+            font-size: 1.7rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            &:hover,
+            &:focus {
+              opacity: 0.75;
+            }
+          }
+        }
+      }
+    }
+    .dropdown-title {
+      padding-right: $ts-spacer * 0.75;
+      padding-left: $ts-spacer * 0.75;
+      font-family: $ts-font-family-primary;
+    }
+  }
+}
+
+.header-bar-item--bonus {
+  @include -breakpoint(md, down) {
+    .bonus-progress {
+      margin-top: 0.2rem;
+    }
+    .progress {
+      margin-top: 0.4rem;
+    }
+    .dropdown-menu {
+      display: none;
+    }
+  }
+}
+
+.header-bar-item--logout {
+  @include -breakpoint(md, down) {
+    .header-bar-link {
+      color: $c25;
+      &:focus,
+      &:hover {
+        color: lighten($c25, 5%);
+      }
+    }
+  }
+}
+
+.header-bar-item--language {
+  .dropdown-menu {
+    right: -2rem;
+    &:before {
+      right: 2rem + 1rem;
+    }
+  }
+  @include -breakpoint(md, down) {
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}
+
+.header-bar-link {
+  color: $c1;
+  font-size: 1.5rem;
+  &:focus,
+  &:hover {
+    color: $c1;
+    opacity: 0.75;
+    text-decoration: none;
+  }
+  .icon-arrow-down {
+    left: -0.3rem;
+  }
+  @include -breakpoint(lg, down) {
+    font-size: 1.4rem;
+  }
+}
+
+.header-bar-link--user {
+  @include -breakpoint(lg, down) {
+    font-size: 1.3rem;
+  }
+}
+
+.header-bar-icon {
+  @include -breakpoint(md) {
+    background-color: $c17;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    &.header-bar-icon--progress {
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+  }
+  @include -breakpoint(md, down) {
+    .icon {
+      font-size: 2rem;
+    }
+  }
+}
+
+.is-sticky-bar {
+  @include -breakpoint(md, down) {
+    padding-top: $ts-header-height-mobile;
+    .header-inner {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      transition: top 0.2s ease;
+    }
+  }
+}
+
+.is-scrolling-down {
+  @include -breakpoint(md, down) {
+    .header-inner {
+      top: -5rem;
+    }
+    & ~ #main .prelive {
+      .prelive-filter-sticky,
+      .prelive-list-filter-sticky {
+        top: 0;
+        margin-top: 0;
+      }
+    }
+  }
+}

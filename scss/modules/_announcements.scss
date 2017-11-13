@@ -1,0 +1,22 @@
+//pranesimai
+.announcement-divider {
+  height: 1px;
+  width: 4rem;
+  display: inline-block;
+  background: $c5;
+}
+
+.announcement-body {
+  padding-left: 0;
+  color: $c5;
+  @include -breakpoint(sm) {
+    padding-left: 14rem;
+  }
+  @media (min-width: map-get($ts-breakpoints, sm)) and (max-width: map-get($ts-breakpoints, md)) {
+    padding-left: 13.5rem;
+  }
+}
+
+.announcement-date {
+  width: 15rem;
+}

@@ -1,0 +1,118 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,500,700&subset=cyrillic,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&subset=cyrillic,latin-ext);
+
+/*
+Project master settings
+*/
+@import "settings";
+@import "colors";
+
+/*
+Mixin
+*/
+@import "mixins/breakpoints-helper";
+@import "mixins/collapse";
+@import "mixins/forms";
+@import "mixins/alerts";
+@import "mixins/triangle";
+@import "mixins/progress";
+
+/*
+Helpers generating
+*/
+@import "helpers/colors";
+
+/*
+Icons
+*/
+@import "font-icons-base";
+@import "font-icons";
+
+/*
+CSS Framework
+*/
+@import "bootstrap/boostrap";
+@import "bootstrap/fixes";
+
+/*
+Plugins
+*/
+@import "plugins/sweetalert";
+@import "plugins/owl";
+@import "plugins/animate";
+
+/*
+Modules
+*/
+@import "modules/typography";
+@import "modules/header";
+@import "modules/header-bar";
+@import "modules/header-menu";
+@import "modules/footer";
+@import "modules/buttons";
+@import "modules/badge";
+@import "modules/dropdown";
+@import "modules/form-elements";
+@import "modules/form-validation";
+@import "modules/alerts";
+@import "modules/pagination";
+@import "modules/collapse";
+@import "modules/cms-text";
+@import "modules/loader";
+@import "modules/links";
+@import "modules/modal";
+@import "modules/layouts";
+@import "modules/static-sidebar";
+@import "modules/promotions";
+@import "modules/account";
+@import "modules/need-help";
+@import "modules/partners";
+@import "modules/flash-messages";
+@import "modules/slider";
+@import "modules/swipe-menu";
+@import "modules/casino-menu";
+@import "modules/casino-filter";
+@import "modules/casino-game-card";
+@import "modules/casino-game";
+@import "modules/pagination";
+@import "modules/payments";
+@import "modules/locations";
+@import "modules/tooltip";
+@import "modules/overlay";
+@import "modules/progress";
+@import "modules/banks";
+@import "modules/popper-tooltip";
+@import "modules/prelive-base";
+@import "modules/prelive-filter";
+@import "modules/prelive-categories";
+@import "modules/prelive-betslip";
+@import "modules/prelive-list";
+@import "modules/breadcrumbs";
+@import "modules/loyalty";
+@import "modules/announcements";
+@import "modules/carousel";
+@import "modules/birthdays";
+@import "modules/error";
+
+// CMS pages
+@import "modules/cms-mobile";
+
+/*
+Widgets
+*/
+@import "widgets/daily-top-winnings";
+@import "widgets/top-live-winners";
+@import "widgets/casino-ad";
+@import "widgets/loyalty";
+@import "widgets/landing-games-live";
+
+/*
+Helpers
+*/
+@import "helpers";
+
+/*
+Custom
+*/
+@import "javascript";
+@import "theme";

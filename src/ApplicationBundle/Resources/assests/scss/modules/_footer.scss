@@ -1,0 +1,40 @@
+.footer{
+  border-top: 1px solid $c24;
+  opacity: 1;
+}
+
+.footer-menu {
+  .nav {
+
+    margin-bottom: 0;
+    display: block;
+
+    a {
+      display: block;
+      padding: 0.3rem 0;
+      &,
+      &:focus,
+      &:hover {
+        color: $c5;
+      }
+    }
+  }
+}
+
+.footer-menu-heading {
+  @include -breakpoint(md, down) {
+    cursor: pointer;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
+
+.footer-menu-hr {
+  margin-right: $ts-spacer * -0.75;
+  margin-left: $ts-spacer * -0.75;
+  @include -breakpoint(md) {
+    margin-right: $ts-spacer * -1;
+    margin-left: $ts-spacer * -1;
+  }
+}

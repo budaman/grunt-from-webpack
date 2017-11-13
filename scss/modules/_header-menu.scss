@@ -1,0 +1,208 @@
+.header-menu {
+  .navbar-nav {
+    > li {
+      &.is-active {
+        > a {
+          color: $c1;
+        }
+      }
+      > a {
+        position: relative;
+        display: block;
+        padding: 2rem 1.5rem;
+        color: $c12;
+        font-size: 1.8rem;
+        &:hover,
+        &:focus {
+          color: $c1;
+          text-decoration: none;
+        }
+        @include -breakpoint(md) {
+          padding: 1.3rem 1rem;
+          font-size: 1.4rem;
+        }
+        @include -breakpoint(lg) {
+          padding: 1.6rem 2rem;
+          font-size: 1.7rem;
+        }
+        @include -breakpoint(xxl) {
+          padding: 1.6rem 4rem;
+          font-size: 1.8rem;
+        }
+        @include -breakpoint(md, down) {
+          border-top: 1px solid $c66;
+        }
+      }
+    }
+    &.menu-main {
+      > li {
+        &:first-child {
+          > a {
+            @include -breakpoint(md) {
+              padding-left: 0;
+            }
+            @include -breakpoint(md, down) {
+              border-top: none;
+            }
+          }
+        }
+        &.is-promo,
+        &.is-new {
+          > a {
+            color: $c35;
+            &:hover,
+            &:focus {
+              color: rgba($c35, 0.65);
+              &:after {
+                background: rgba($c35, 0.65);
+              }
+            }
+          }
+        }
+        &.is-new {
+          > a {
+            position: relative;
+            white-space: nowrap;
+            &:after {
+              background: $c35;
+              content: 'n';
+              position: relative;
+              top: -1.8rem;
+              left: -0.4rem;
+              display: inline-block;
+              width: 1.4rem;
+              height: 1.4rem;
+              border-radius: 50%;
+              padding: 0 0.4rem;
+              color: $c2;
+              font-size: 1rem;
+              line-height: 1.4rem;
+              transition: $ts-transition-default;
+            }
+          }
+        }
+      }
+    }
+    &.menu-extra {
+      > li {
+        @include -breakpoint(md) {
+          > a{
+            color: $c1;
+            &:hover,
+            &:focus {
+              opacity: 0.75;
+            }
+          }
+        }
+        &:last-child {
+          > a {
+            @include -breakpoint(md, down) {
+              border-bottom: 1px solid $c66;
+            }
+            @include -breakpoint(md) {
+              padding-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .badge {
+    top: -1.3rem;
+  }
+}
+
+.header-menu-toggler {
+  $header-menu-toggler-space: 4px; //need px
+  padding: $header-menu-toggler-space 0;
+  .icon-bar {
+    background-color: $c1;
+    width: 2.7rem;
+    height: 2px; //need px
+    & + .icon-bar {
+      margin-top: $header-menu-toggler-space;
+    }
+    transition: $ts-transition-default;
+  }
+  &[aria-expanded="true"] {
+    transform: scale(0.85);
+    .icon-bar {
+      height: 3px; //need px
+      &:nth-child(1) {
+        top: 0.7rem;
+        @include -breakpoint(xs, down) {
+          top: 0.8rem;
+        }
+        transform: rotate(-45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        top: -0.7rem;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+.header-menu-container {
+  .container-fluid {
+    @include -breakpoint(md, down) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.navbar--menu {
+  @include -breakpoint(md, down) {
+    max-height: calc(100vh - 4.5rem);
+    overflow-y: auto;
+  }
+}
+
+.is-sticky-menu {
+  @include -breakpoint(md) {
+    padding-top: 4.9rem;
+    .header-menu-container {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+  }
+  @include -breakpoint(lg) {
+    padding-top: 5.8rem;
+  }
+}
+
+.page-prelive .header:not(.is-sticky-bar ) {
+  .header-menu {
+    .navbar-nav > li.first {
+      a:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        display: none;
+        width: 0;
+        height: 0;
+        margin-left: -$ts-spacer / 4;
+        @include -breakpoint(lg) {
+          margin-left: -$ts-spacer / 2;
+        }
+        @include -breakpoint(xxl) {
+          margin-left: -$ts-spacer;
+        }
+        border-style: solid;
+        border-width: 0 0.5rem 0.5rem 0.5rem;
+        border-color: transparent transparent $c1 transparent;
+        transform: translateX(-50%);
+        @include -breakpoint(md) {
+          display: block;
+        }
+      }
+    }
+  }
+}

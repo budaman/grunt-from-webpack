@@ -1,0 +1,47 @@
+@mixin -breakpoint($breakpoint, $max-width: null) {
+
+  $step: null;
+  $step-value: null;
+  $step-from-breakpoint: false;
+
+  //check or $breakpoint from $ts-breakpoints array or not
+  @each $br-name, $br-value in $ts-breakpoints {
+    @if ($breakpoint == $br-name) {
+      $step-from-breakpoint: true;
+      $step: $br-name;
+      $step-value: $br-value;
+    }
+  }
+
+  //if $breakpoint from $ts-breakpoints array
+  @if ($step-from-breakpoint == true) {
+
+    @if ($step == 'xs' and $max-width == 'down') {
+      @media (max-width: $ts-xs-down) {
+        @content
+      }
+    } @else {
+      @if ($max-width == 'down' ) {
+        @media (max-width: $step-value - 1) {
+          @content
+        }
+      } @else {
+        @media (min-width: $step-value) {
+          @content
+        }
+      }
+    }
+
+    //if $breakpoint is custom value
+  } @else {
+    @if ($max-width == 'down') {
+      @media (max-width: $breakpoint - 1) {
+        @content
+      }
+    } @else {
+      @media (min-width: $breakpoint) {
+        @content
+      }
+    }
+  }
+}

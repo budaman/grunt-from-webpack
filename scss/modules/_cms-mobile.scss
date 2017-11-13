@@ -1,0 +1,85 @@
+$cms-mobile-border-color: #373737;
+$cms-mobile-text-color: #4d4d4d;
+
+.cms-mobile-background  {
+  background: no-repeat center top;
+  background-size: cover;
+}
+
+.cms-mobile-top {
+  padding-top: 15rem;
+  @include -breakpoint(sm) {
+    padding-top: 18rem;
+  }
+  @include -breakpoint(md) {
+    padding-top: 27rem;
+  }
+}
+
+.cms-mobile-top-title-first,
+.cms-mobile-top-title-desc {
+  font-size: 2rem;
+  @include -breakpoint(md, down) {
+    font-size: 1.8rem;
+  }
+}
+
+.cms-mobile-top-title {
+  font-size: 3.5rem;
+  @include -breakpoint(md) {
+    font-size: 4.8rem;
+  }
+}
+
+.cms-mobile-top-btn {
+  width: 5.5rem;
+  height: 5.5rem;
+  border: 1px solid $cms-mobile-border-color;
+}
+
+.cms-mobile-apps-divider {
+  @include -breakpoint(md) {
+    border-left: 1px solid $cms-mobile-border-color;
+  }
+}
+
+.cms-mobile-apps-title {
+  font-size: 2.2rem;
+  @include -breakpoint(md) {
+    font-size: 3rem;
+  }
+}
+
+.cms-mobile-apps-btn {
+  min-width: 22rem;
+}
+
+.cms-mobile-apps-badge {
+  background-color: $c30;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+$cms-mobile-animation-time: 10s;
+
+.cms-mobile-bottom {
+  p {
+    color: $cms-mobile-text-color;
+    animation-duration: $cms-mobile-animation-time;
+    animation-name: cms-mobile-animation;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    &:nth-child(2) {
+      animation-delay: $cms-mobile-animation-time / 3;
+    }
+    &:nth-child(3) {
+      animation-delay: $cms-mobile-animation-time * 0.667;
+    }
+  }
+}
+
+@keyframes cms-mobile-animation {
+  25%   { color: $cms-mobile-text-color }
+  50%  { color: $c1 }
+  75% { color: $cms-mobile-text-color }
+}

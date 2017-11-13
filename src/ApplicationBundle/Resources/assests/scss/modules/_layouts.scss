@@ -1,0 +1,33 @@
+.layout-register-content {
+  .registration,
+  .login {
+    width: 100%;
+    @include -breakpoint(md) {
+      width: 56rem;
+    }
+  }
+}
+
+.layout-register-sidebar {
+  width: 100%;
+  @include -breakpoint(xl) {
+    width: 43.5rem;
+  }
+  @include -breakpoint(md) {
+    .need-help {
+      width: 56rem;
+    }
+  }
+}
+
+.layout-account-sidebar {
+  width: 100%;
+  padding: $ts-spacer * 1.5;
+  @include -breakpoint(lg) {
+    max-width: 28rem;
+  }
+  @include -breakpoint(lg, down) {
+    padding: 0;
+  }
+}
+

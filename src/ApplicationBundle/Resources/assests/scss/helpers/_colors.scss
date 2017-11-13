@@ -1,0 +1,17 @@
+@mixin -helper-colors-base-gen($item-colors, $type) {
+  @each $items in $item-colors {
+    @each $name, $color in $items {
+      @if $type == 'base' {
+        .h-bg-#{$name}{ background-color: #{$color} }
+        .h-c-#{$name}{ color: #{$color} }
+      }
+      @if $type == 'custom' {
+        .h-bg#{$name}{ background-color: #{$color} }
+        .h-c#{$name}{ color: #{$color} }
+      }
+    }
+  }
+}
+
+@include -helper-colors-base-gen(nth($ts-colors-helpers, 1), 'base');
+@include -helper-colors-base-gen(nth($ts-colors-helpers, 2), 'custom');

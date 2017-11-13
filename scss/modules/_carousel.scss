@@ -1,0 +1,26 @@
+// Core - OWL Slider
+
+.carousel {
+  .owl-dots {
+    bottom: -3rem;
+  }
+  .owl-dot {
+    &.active {
+      border-color: $c9;
+    }
+    &:not(.active):before {
+        background: $c9;
+    }
+  }
+}
+
+//Themes
+.carousel--top-five {
+  .carousel-item {
+    &:hover {
+      img {
+        opacity: 0.85;
+      }
+    }
+  }
+}

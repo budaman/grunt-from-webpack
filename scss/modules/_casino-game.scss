@@ -1,0 +1,58 @@
+.casino-game-overlay {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 27%, transparent 46%, transparent 73%);
+  opacity: 0;
+  transition: opacity 0.3s ease 0.1s;
+}
+
+.casino-game {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.casino-game-container {
+  padding-bottom: 2rem;
+  @include -breakpoint(lg){
+    padding-bottom: 6rem;
+  }
+  @include -breakpoint(xl){
+    padding-bottom: 9rem;
+  }
+  @include -breakpoint(xxl){
+    padding-bottom: 13rem;
+  }
+  .loader-container {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &.is-active {
+    .casino-game {
+      opacity: 1;
+      visibility: visible;
+    }
+    .casino-game-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+.casino-game-timer-spacer {
+  top: 0.1rem;
+  left: 1rem;
+  height: 1rem;
+  border-left: 1px solid rgba($c1, 0.4);
+}
+
+.casino-game-iframe {
+  border: 0.5rem solid $c1;
+  border-radius: 0.5rem 0.1rem 0.5rem 0.5rem;
+}
+
+.casino-game-controls {
+  top: 0;
+  right: -2.5rem;
+  padding: 0.2rem 0.5rem 0.5rem 0.2rem;
+  border-radius: 0 0.2rem 0.2rem 0;
+}
+
+

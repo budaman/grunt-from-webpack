@@ -1,0 +1,249 @@
+//Prelive - navigation, search
+$ts-filter-expand-breakpoint: md;
+$ts-filter-height: 5.5rem;
+
+.navbar--prelive {
+
+  //TODO
+  &:before {
+    background-color: $c1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+    width: $ts-spacer;
+    z-index: 2;
+  }
+  @include -breakpoint($ts-filter-expand-breakpoint) {
+    &:before {
+      display: block;
+    }
+  }
+  @include -breakpoint($ts-filter-expand-breakpoint, down) {
+    background-color: $c16;
+  }
+  .navbar-collapse {
+    width: calc(100% - 31.5rem);
+    @include -breakpoint($ts-filter-expand-breakpoint) {
+      &.collapse--block {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+      }
+    }
+    &:before {
+      @include -triangle('top', 0.5rem, $c1);
+      left: 5rem;
+      top: -0.5rem;
+    }
+    @include -breakpoint($ts-filter-expand-breakpoint, down) {
+      order: 1;
+    }
+  }
+  .navbar-nav {
+    flex-direction: row;
+    margin-right: 0;
+    margin-left: 0;
+    @include -breakpoint(md) {
+      margin-right: -$ts-spacer * 0.5;
+      margin-left: -$ts-spacer * 0.5;
+    }
+    @include -breakpoint(xl) {
+      margin-right: -$ts-spacer * 0.75;
+      margin-left: -$ts-spacer * 0.75;
+    }
+    @include -breakpoint(xxl) {
+      margin-right: -$ts-spacer;
+      margin-left: -$ts-spacer;
+    }
+  }
+  .navbar-toggler,
+  .nav-link,
+  .owl-stage,
+  .owl-stage-outer {
+    height: $ts-filter-height;
+  }
+  .owl-stage {
+    flex-wrap: nowrap;
+  }
+  .nav-link {
+    display: inline-block;
+    padding: 1.6rem $ts-spacer * 0.5 1.3rem !important;
+    color: $c2;
+    font-size: 1.4rem;
+    letter-spacing: 0.15px;
+    border-bottom: 0.2rem solid transparent;
+    @include -breakpoint(lg) {
+      font-size: 1.5rem;
+    }
+    @include -breakpoint(xl) {
+      padding: 1.5rem $ts-spacer * 0.75 !important;
+    }
+    @include -breakpoint(xxl) {
+      padding: 1.5rem $ts-spacer !important;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      right: $ts-spacer * 0.5;
+      bottom: -0.2rem;
+      left: $ts-spacer * 0.5;
+      border-bottom: 0.2rem solid transparent;
+      @include -breakpoint(xl) {
+        right: $ts-spacer * 0.75;
+        left: $ts-spacer * 0.75;
+      }
+      @include -breakpoint(xxl) {
+        right: $ts-spacer;
+        left: $ts-spacer;
+      }
+    }
+  }
+  .is-active .nav-link,
+  .nav-link:focus,
+  .nav-link:hover {
+    color: $c3;
+  }
+  .is-active .nav-link {
+    &:before {
+      border-color: $c3;
+    }
+  }
+  .swipe-menu-next {
+    @include -breakpoint($ts-filter-expand-breakpoint, down) {
+      margin-right: -1rem;
+    }
+  }
+  [aria-expanded="true"] {
+    @include -breakpoint($ts-filter-expand-breakpoint, down) {
+      .icon-arrow-left {
+        opacity: 1;
+        visibility: visible;
+        max-width: 100px;
+        padding-right: $ts-spacer / 2;
+        left: -0.1rem;
+      }
+      .icon-arrow-down,
+      & ~ .prelive-search {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+.prelive-search {
+  padding: 1rem 0;
+  @include -breakpoint(xl) {
+    width: 39.5rem;
+  }
+  @include -breakpoint($ts-filter-expand-breakpoint, down) {
+    background-color: $c2;
+    &:not(.is-active) .prelive-search-form {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .prelive-search-form {
+      background-color: $c0;
+      position: absolute;
+      top: 0;
+      right: 5rem;
+      left: 0;
+      height: $ts-filter-height;
+      padding: 0 $ts-spacer * 0.75;
+    }
+    &.is-active {
+      .prelive-search-toggle {
+        .icon-search {
+          display: none;
+        }
+        .icon-close {
+          display: inline-block !important;
+        }
+      }
+    }
+  }
+  .input-group-sm {
+    > .form-control,
+    > .input-group-addon {
+      background-color: $c15;
+      height: 3.5rem;
+      padding: 0 2rem;
+      border: none;
+    }
+    > .form-control {
+      padding-right: 0;
+      border-radius: 0.3rem 0 0 0.3rem;
+      @include -breakpoint(md, down) {
+        border-radius: 0.3rem;
+      }
+    }
+    > .input-group-addon {
+      border-radius: 0 0.3rem 0.3rem 0;
+    }
+  }
+}
+
+.prelive-search-form {
+  @include -breakpoint(xl) {
+    width: 100%;
+  }
+}
+
+//prelive search gradient on desktop
+@include -breakpoint(md, up) {
+  .prelive-search-input-grad {
+    display: inline-block;
+    width: 2rem;
+    background: linear-gradient(to right, rgba($c1, 0) 0%, rgba($c1, 1) 100%);
+  }
+}
+
+//Tablet
+@media (min-width: map-get($ts-breakpoints, md)) and (max-width: map-get($ts-breakpoints, xl)) {
+  .prelive-search {
+    position: relative;
+  }
+  .prelive-search-form {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    width: 30rem;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+  .is-active {
+    .prelive-search-form {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+//Sticky
+
+.prelive-filter-sticky {
+  .navbar {
+    @include -breakpoint(md, down) {
+      z-index: 10;
+    }
+  }
+}
+
+.is-sticky-prelive-filter {
+  @include -breakpoint(md, down) {
+    padding-bottom: 5.5rem
+  }
+  .navbar {
+    @include -breakpoint(md, down) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+  }
+}

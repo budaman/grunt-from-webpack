@@ -1,0 +1,33 @@
+.games-live-col {
+  @include -breakpoint(lg) {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+.games-live-col-big {
+  @include -breakpoint(lg) {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+}
+
+.games-live-item {
+  &:hover {
+    .games-live-item-content-img {
+      opacity: 0.85;
+    }
+  }
+}
+
+.games-live-col-big {
+  .games-live-item {
+    padding-top: 67.2%; //aspect ratio to maintain the content container size
+  }
+}
+
+.games-live-item-title  {
+  @include -breakpoint(lg, down) {
+    font-size: 1.4rem;
+  }
+}

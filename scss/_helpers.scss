@@ -1,0 +1,244 @@
+//TODO: add helpers generation
+
+/*
+Helpers
+*/
+.h-cp { cursor: pointer }
+.h-oh { overflow: hidden }
+.h-oh-x { overflow-x: hidden }
+.h-vh { visibility: hidden }
+
+//background
+.h-bg-none { background: none }
+.h-bg-cover { background-size: cover }
+.h-bg-center { background-position: center }
+.h-bg-topRight { background-position: right top }
+.h-bg-no-repeat { background-repeat: no-repeat }
+
+.h-bg-grad1 { background: linear-gradient(to right, rgba($c1, 0) 0%, $c1 30%, $c1 100%) }
+
+//Display
+.h-hidden, .hidden, .hide { display: none!important }
+
+//Positions
+.h-stat { position: static }
+.h-rel { position: relative }
+.h-abs { position: absolute }
+.h-fix { position: fixed }
+.h-pos-t0 { top: 0 }
+.h-pos-tn1 { top: -1px }
+.h-pos-tn2 { top: -2px }
+.h-pos-tn3 { top: -3px }
+.h-pos-r0 { right: 0 }
+.h-pos-b0 { bottom: 0 }
+.h-pos-l0 { left: 0 }
+.h-pos-ln1 { left: -1px }
+.h-pos-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.h-z0 { z-index: 0 }
+.h-z1 { z-index: 1 }
+.h-z2 { z-index: 2 }
+.h-z3 { z-index: 3 }
+.h-z4 { z-index: 4}
+.h-z5 { z-index: 5 }
+.h-z10 { z-index: 10 }
+.h-z11 { z-index: 11 }
+.h-z12 { z-index: 12 }
+
+//Width
+.h-w-auto { width: auto!important }
+.h-max-w0 { max-width: 0 }
+.h-max-w100pr { max-width: 100% }
+.h-w50 { width: 5rem }
+.h-w60 { width: 6rem }
+.h-w80 { width: 8rem }
+.h-w100pr { width: 100% }
+.h-w120 { width: 12rem }
+.h-w560 { width: 56rem }
+.h-w585 { width: 58.5rem }
+
+//Height
+.h-h-auto { height: auto }
+.h-h0 { height: 0 }
+.h-h100pr { height: 100% }
+
+//margin
+.h-mr3 { margin-right: 0.2rem }
+.h-mbn5 { margin-bottom: -0.5rem }
+.h-mb6 { margin-bottom: 0.6rem }
+.h-ml7 { margin-left: 0.7rem }
+.h-ml12 { margin-left: 1.2rem }
+
+//padding
+.h-pb6 { padding-bottom: 0.6rem }
+
+//Border
+.h-b-none { border: none }
+.h-bt-none { border-top: none!important }
+.h-rad3 { border-radius: 0.3rem }
+.h-rad-t3 { border-radius: 0.3rem 0.3rem 0 0 }
+.h-rad-b3 { border-radius: 0 0 0.3rem 0.3rem }
+.h-rad50pr { border-radius: 50% }
+
+//Font
+.h-font-primary { font-family: $ts-font-family-primary }
+.h-font-secondary { font-family: $ts-font-family-secondary }
+
+//TODO: need generate
+.h-fs8 { font-size: 0.8rem }
+.h-fs10 { font-size: 1rem }
+.h-fs12 { font-size: 1.2rem }
+.h-fs13 { font-size: 1.3rem }
+.h-fs14 { font-size: 1.4rem }
+.h-fs15 { font-size: 1.5rem }
+.h-fs16 { font-size: 1.6rem }
+.h-fs17 { font-size: 1.7rem }
+.h-fs18 { font-size: 1.8rem }
+.h-fs20 { font-size: 2rem }
+.h-fs22 { font-size: 2.2rem }
+.h-fs23 { font-size: 2.3rem }
+.h-fs24 { font-size: 2.4rem }
+.h-fs25 { font-size: 2.5rem }
+.h-fs28 { font-size: 2.8rem }
+.h-fs30 { font-size: 3.0rem }
+.h-fs32 { font-size: 3.2rem }
+.h-fs40 { font-size: 4rem }
+.h-fs60 { font-size: 6rem }
+
+@include -breakpoint(md){
+  .h-fs20-md { font-size: 2rem }
+  .h-fs40-md { font-size: 4rem }
+}
+@include -breakpoint(xl){
+  .h-fs50-xl { font-size: 5rem }
+}
+@include -breakpoint(md, down){
+  .h-fs16-md-down { font-size: 1.6rem }
+}
+
+.h-fw300 { font-weight: 300 }
+.h-fw400 { font-weight: 400 }
+.h-fw500 { font-weight: 500 }
+.h-fw600, .h-w600 { font-weight: 600 }
+.h-fw700 { font-weight: 700 }
+
+//Text
+.h-text-dn {
+  &, &:hover, &:focus { text-decoration: none }
+}
+.h-text-tn { text-transform: none }
+.h-text-nowrap { white-space: nowrap }
+.h-text-wrap { white-space: normal }
+.h-text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//Line height
+.h-lh1 { line-height: 1 }
+.h-lh1_2 { line-height: 1.2 }
+.h-lh1_4 { line-height: 1.4 }
+.h-lh1_5 { line-height: 1.5 }
+
+//Other
+.h-select-none { user-select: none }
+.h-op0 { opacity: 0 }
+.h-transition-none { transition: none; }
+.h-t0 { transition: $ts-transition-default }
+.h-t1 { transition: opacity $ts-transition-timing $ts-transition-timing-function }
+
+//Shadows
+.h-shadow1 { box-shadow: 0 0.1rem 0 0 rgba(193, 193, 193, 0.5) }
+
+//Transform
+.h-rotY180 { transform: rotateY(180deg) }
+.h-rot270 { transform: rotate(270deg) }
+
+//Flex
+.h-flex-item-grow { flex: 1 1 auto }
+.h-flex-shrink0 { flex-shrink: 0 }
+
+//Gutter
+//TODO: need generate
+.h-gutter2 {
+  $ts-gutter-helper: 1px;
+  margin-right: $ts-gutter-helper * -1;
+  margin-left: $ts-gutter-helper * -1;
+  > * {
+    padding-right: $ts-gutter-helper;
+    padding-left: $ts-gutter-helper;
+  }
+}
+.h-gutter6 {
+  $ts-gutter-helper: 0.3rem;
+  margin-right: $ts-gutter-helper * -1;
+  margin-left: $ts-gutter-helper * -1;
+  > * {
+    padding-right: $ts-gutter-helper;
+    padding-left: $ts-gutter-helper;
+  }
+}
+.h-gutter10 {
+  $ts-gutter-helper: 0.5rem;
+  margin-right: $ts-gutter-helper * -1;
+  margin-left: $ts-gutter-helper * -1;
+  > * {
+    padding-right: $ts-gutter-helper;
+    padding-left: $ts-gutter-helper;
+  }
+}
+.h-gutter15 {
+  $ts-gutter-helper: 0.75rem;
+  margin-right: $ts-gutter-helper * -1;
+  margin-left: $ts-gutter-helper * -1;
+  > * {
+    padding-right: $ts-gutter-helper;
+    padding-left: $ts-gutter-helper;
+  }
+}
+.h-gutter20 {
+  $ts-gutter-helper: 1rem;
+  margin-right: $ts-gutter-helper * -1;
+  margin-left: $ts-gutter-helper * -1;
+  > * {
+    padding-right: $ts-gutter-helper;
+    padding-left: $ts-gutter-helper;
+  }
+}
+.h-gutter40 {
+  $ts-gutter-helper: 2rem;
+  margin-right: $ts-gutter-helper * -1;
+  margin-left: $ts-gutter-helper * -1;
+  > * {
+    padding-right: $ts-gutter-helper;
+    padding-left: $ts-gutter-helper;
+  }
+}
+@include -breakpoint(xl) {
+  .h-gutter40-xl {
+    $ts-gutter-helper: 2rem;
+    margin-right: $ts-gutter-helper * -1;
+    margin-left: $ts-gutter-helper * -1;
+    > * {
+      padding-right: $ts-gutter-helper;
+      padding-left: $ts-gutter-helper;
+    }
+  }
+}
+
+@include -breakpoint(md) {
+  .h-gutter30-md {
+    $ts-gutter-helper: 1.5rem;
+    margin-right: $ts-gutter-helper * -1;
+    margin-left: $ts-gutter-helper * -1;
+    > * {
+      padding-right: $ts-gutter-helper;
+      padding-left: $ts-gutter-helper;
+    }
+  }
+}

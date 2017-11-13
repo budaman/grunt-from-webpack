@@ -1,0 +1,162 @@
+//betslist
+.account-content-wrapper {
+  width: 100%;
+  padding: $ts-spacer * 2.5 $ts-spacer * 3;
+  @include -breakpoint(xl, down) {
+    padding: $ts-spacer;
+  }
+}
+
+//betlist list layout
+.bet-list-wrapper {
+  padding-bottom: 0;
+}
+
+.acc-list-row--bets, .bet-list-row{
+  padding: $ts-spacer * 2 0 $ts-spacer * 1.75 0;
+  @include -breakpoint(lg, down) {
+    padding: $ts-spacer 0 $ts-spacer 0;
+  }
+  border-top: 1px solid $c9;
+  .info {
+    color: $c12;
+  }
+  justify-content: flex-start;
+  align-items: center;
+  > div {
+    width: 50%;
+    @include -breakpoint(xxl, down) {
+      width: 100%;
+    }
+  }
+  .bet-list-figures-wrapper {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+    margin-left: 0;
+    margin-bottom: auto;
+
+    @include -breakpoint(xxl, down) {
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: left;
+      margin-left: 6rem;
+    }
+    .bet-figures-wrapper {
+      margin-top: $ts-spacer * 0.5;
+      @include -breakpoint(xxl, down) {
+        flex-wrap: wrap;
+        order: -1;
+        margin-top: 0;
+        margin-bottom: $ts-spacer * 0.5;
+      }
+      @include -breakpoint(sm, down) {
+        flex-direction: column;
+      }
+    }
+    .btn-bet-more-wrapper {
+      @include -breakpoint(xxl, down) {
+      }
+    }
+  }
+}
+
+.bet-list-divider {
+  margin-right: $ts-spacer * 0.5;
+  border-right: 1px solid $c9;
+  padding-right: $ts-spacer * 0.5;
+  @include -breakpoint(sm, down) {
+    border: 0;
+  }
+}
+
+.bet-figures {
+  min-width: 17rem;
+  &.lost {
+    color: $c42;
+  }
+  &.won {
+    color: $c43;
+  }
+  &.avoided {
+    color: $c5;
+  }
+  &.cashout {
+    color: $c3;
+  }
+  &.waiting {
+    color: #c8c8c8
+  }
+  &.bet-cashout-wrapper {
+    color: $c44;
+  }
+}
+
+//bets and deposits history
+.status {
+  line-height: 0.8;
+  z-index: 2;
+
+  &::after {
+    background-repeat: no-repeat;
+    content: '';
+    width: 3rem;
+    height: 3rem;
+    background-size: cover;
+    display: none;
+  }
+  &.lost {
+    color: $c42;
+  }
+  &.won {
+    color: $c43;
+  }
+  &.avoided {
+    color: $c5;
+  }
+  &.waiting {
+    color: $c41;
+  }
+  &.cashout {
+    color: $c44;
+  }
+}
+
+.badge-bet-system {
+  background: $c3;
+  border-radius: 3px;
+  color: $c1;
+}
+
+.multi, .system {
+  .bet-event {
+    position: relative;
+    &:not(:first-child) {
+      margin-top: $ts-spacer;
+    }
+    &:not(:last-child) {
+      .bet-info-wrapper {
+        &:before {
+          content: '';
+          display: block;
+          height: 75%;
+          position: absolute;
+          left: 1.9rem;
+          top: $ts-spacer * 2.5;
+          z-index: 1;
+          width: 2px; //need px
+          background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAICAYAAADTLS5CAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAfSURBVHjaYjxz5ux/BgYGBiYGKGD8//8/A4oIMQzAAIkeBnA2PYZAAAAAAElFTkSuQmCC');
+        }
+      }
+    }
+  }
+}
+
+.acc-list-row--history{
+  padding: $ts-spacer  0;
+  @include -breakpoint(lg, down) {
+    padding: $ts-spacer 0;
+  }
+  border-top: 1px solid $c9;
+}

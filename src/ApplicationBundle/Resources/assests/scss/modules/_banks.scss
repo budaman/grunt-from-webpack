@@ -1,0 +1,8 @@
+.bank-item {
+  border: solid 1px $c18;
+  height: 5.5rem;
+  &:focus,
+  &:hover {
+    border-color:  $c9;
+  }
+}

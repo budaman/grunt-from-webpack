@@ -1,0 +1,39 @@
+.ts-overlay {
+  background-color: rgba($c23, 0.8);
+  transition: all 0.2s ease;
+  z-index: 5;
+}
+
+.is-header-dropdown-opened {
+  @include -breakpoint(md) {
+    .ts-overlay {
+      visibility: visible;
+      opacity: 1 !important;
+    }
+    .header-inner,
+    .header {
+      position: static !important;
+    }
+    .header-bar-container {
+      z-index: 6;
+    }
+  }
+}
+
+.is-betslip-in-action {
+  .ts-overlay {
+    background-color: rgba($c23, 0.4);
+    visibility: visible;
+    opacity: 1 !important;
+    z-index: 100;
+  }
+  .ts-overlay-loader {
+    display: flex!important;
+  }
+  .loader {
+    width: 15rem;
+    height: 15rem;
+    border: 6px solid rgba(76,79,82, .3);
+    border-top-color: rgba($c1, 0.7);
+  }
+}

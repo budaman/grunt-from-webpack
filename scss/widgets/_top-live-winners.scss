@@ -1,0 +1,76 @@
+$winners-live-c1: #acadaf;
+$winners-live-bubble-c1: #FC004A;
+$winners-live-bubble-c2: #E61D5C;
+$winners-live-bubble-c3: #B84B78;
+$winners-live-bubble-c4: #7F7E99;
+$winners-live-bubble-c5: #35B1BA;
+$winners-live-bubble-c6: #00DCD7;
+$winners-live-bubble-c7: #00FBEC;
+
+.winners-live-created {
+  color: $winners-live-c1;
+}
+
+.winners-live-item {
+  &:hover {
+    .winners-live-buttons {
+      opacity: 1;
+    }
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    left: -1.2rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+  }
+  &:not(:last-child):after {
+    content: '';
+    position: absolute;
+    top: 1.4rem;
+    left: -1rem;
+    bottom: -2.1rem;
+    width: 1px;
+  }
+  &:nth-child(1){
+    &:before { background: $winners-live-bubble-c1 }
+    &:after { background-image: linear-gradient(to bottom, $winners-live-bubble-c1 0%, $winners-live-bubble-c2 100%) }
+  }
+  &:nth-child(2){
+    &:before { background: $winners-live-bubble-c2 }
+    &:after { background-image: linear-gradient(to bottom, $winners-live-bubble-c2 0%, $winners-live-bubble-c3 100%) }
+  }
+  &:nth-child(3){
+    &:before { background: $winners-live-bubble-c3 }
+    &:after { background-image: linear-gradient(to bottom, $winners-live-bubble-c3 0%, $winners-live-bubble-c4 100%) }
+  }
+  &:nth-child(4){
+    &:before { background: $winners-live-bubble-c4 }
+    &:after { background-image: linear-gradient(to bottom, $winners-live-bubble-c4 0%, $winners-live-bubble-c5 100%) }
+  }
+  &:nth-child(5){
+    &:before { background: $winners-live-bubble-c5 }
+    &:after { background-image: linear-gradient(to bottom, $winners-live-bubble-c5 5%, $winners-live-bubble-c6 100%) }
+  }
+  &:nth-child(6){
+    &:before { background: $winners-live-bubble-c6 }
+    &:after { background-image: linear-gradient(to bottom, $winners-live-bubble-c6 0%, $winners-live-bubble-c7 100%) }
+  }
+  &:nth-child(7){
+    &:before { background: $winners-live-bubble-c7 }
+  }
+}
+
+.winners-live-buttons {
+  .btn {
+    margin-top: -0.3rem;
+    padding: 1rem;
+    font-size: 1.4rem;
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+}

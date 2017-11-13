@@ -1,0 +1,23 @@
+.partners {
+  .owl-stage {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .owl-item {
+    display: flex;
+    align-items: center;
+    img {
+      display: inline-block;
+      max-height: 8.5rem;
+      max-width: 14rem;
+      width: auto!important;
+      height: auto!important;
+      @include -breakpoint(md, down) {
+        max-width: 10rem;
+      }
+      @include -breakpoint(sm, down) {
+        max-width: 8rem;
+      }
+    }
+  }
+}

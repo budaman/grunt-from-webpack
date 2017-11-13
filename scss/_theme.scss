@@ -1,0 +1,44 @@
+html {
+  font-size: $ts-root-font-size;
+  overflow-x: hidden;
+  @include -breakpoint(xs, down) {
+    font-size: $ts-root-font-size * 0.9;
+  }
+}
+
+body {
+  @include -breakpoint(md, down) {
+    font-size: $ts-font-size-base-mobile;
+  }
+}
+
+a {
+  transition: $ts-transition-default;
+  &.is-disabled {
+    &:active {
+      pointer-events: none;
+    }
+  }
+}
+
+* {
+  &,
+  &:hover,
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.container-fluid {
+  max-width: 124rem;
+  padding-right: $ts-spacer;
+  padding-left: $ts-spacer;
+  @include -breakpoint(md, down) {
+    padding-right: $ts-spacer * 0.75;
+    padding-left: $ts-spacer * 0.75;
+  }
+}
+
+.page-landing {
+  background-color: $c1;
+}

@@ -1,0 +1,327 @@
+// Core - OWL Slider
+
+.slider {
+  .btn-link {
+    padding: 0;
+  }
+  .is-left{
+    .slider-item-article-container {
+      justify-content: flex-start;
+    }
+  }
+  .is-center {
+    .slider-item-article-container {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+  .is-right{
+    .slider-item-article-container {
+      justify-content: flex-end;
+      text-align: right;
+    }
+  }
+  .is-top {
+    .slider-item-article-container {
+      align-items: flex-start;
+    }
+  }
+  .is-middle {
+    .slider-item-article-container {
+      align-items: center;
+    }
+  }
+  .is-bottom {
+    .slider-item-article-container {
+      align-items:  flex-end;
+    }
+  }
+  .btn {
+    @include -breakpoint(sm, down) {
+      min-width: 20rem;
+      padding: 1.25rem 2rem;
+    }
+  }
+}
+
+.has-overlay-25 {
+  .slider-overlay {
+    background: rgba(0, 0, 0, 0.25);
+  }
+}
+
+.has-overlay,
+.has-overlay-33 {
+  .slider-overlay {
+    background: rgba(0, 0, 0, 0.33);
+  }
+}
+
+.has-overlay-50 {
+  .slider-overlay {
+    background: rgba(0, 0, 0, 0.50);
+  }
+}
+
+.slider-item {
+  overflow: hidden;
+}
+
+.slider-overlay {
+  display: none;
+}
+
+.has-overlay,
+.has-overlay-25,
+.has-overlay-33,
+.has-overlay-50 {
+  .slider-overlay {
+    display: block;
+  }
+}
+
+.slider-item-link {
+  &,
+  &:focus,
+  &:hover {
+    color: $c1;
+  }
+}
+
+$ts-slider-do-center-breakpoint: 1750px;
+.slider-item-image {
+  @include -breakpoint($ts-slider-do-center-breakpoint, down) {
+    width: auto !important;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.slider-item-article {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  padding: 0 $ts-spacer * 4;
+  text-align: center;
+  transform: translateY(-50%);
+  @include -breakpoint(lg, down) {
+    padding: 0 $ts-spacer * 2;
+  }
+  @include -breakpoint(sm, down) {
+    padding: 0 $ts-spacer * 0.75;
+  }
+}
+
+//Slider content custom position - left
+.slider-content-left .slider-item-article,
+.slider--sportas-landing .slider-item-article {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.slider-item-title {
+  color: $c1;
+}
+
+.slider-item-content {
+  color: $c1;
+}
+
+.owl-dots {
+  position: absolute;
+  right: 1rem;
+  bottom: 1.25rem;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.owl-dot {
+  position: relative;
+  display: inline-flex;
+  width: 10px;
+  height: 10px;
+  margin: 4px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  &:before {
+    background: $c1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+  &.active {
+    border: 2px solid $c1;
+    &:before {
+      background: transparent;
+    }
+  }
+}
+
+.slider-prev,
+.slider-next,
+.owl-prev,
+.owl-next {
+  background: rgba($c16, 0.6);
+  position: absolute;
+  top: 50%;
+  left: $ts-spacer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 50%;
+  font-size: 0;
+  transform: translateY(-50%);
+  @include -breakpoint(xl, down) {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+  &:hover {
+    opacity: 0.75;
+  }
+  &:before {
+    color: $c1;
+    font-size: 1.6rem;
+  }
+  &.disabled {
+    opacity: 0.5;
+  }
+}
+
+.slider-next,
+.owl-next {
+  left: auto;
+  right: $ts-spacer;
+}
+
+/*
+Themes
+*/
+
+.slider--casino {
+  background: $c16;
+  .slider-item-image {
+    height: 25.6rem;
+    @include -breakpoint(lg, down) {
+      height: 24rem;
+    }
+    @include -breakpoint(md, down) {
+      height: 20rem;
+    }
+  }
+  .slider-item-title {
+    font-family: $ts-font-family-primary;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: none;
+    margin-bottom: 0;
+    @include -breakpoint(lg, down) {
+      margin-bottom: 0.2rem;
+      font-size: 1.8rem;
+    }
+  }
+  .slider-item-content {
+    font-family: $ts-font-family-primary;
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1;
+    @include -breakpoint(lg, down) {
+      font-size: 5rem;
+    }
+    @include -breakpoint(md, down) {
+      font-size: 4rem;
+    }
+    @include -breakpoint(sm, down) {
+      font-size: 2.4rem;
+    }
+  }
+  .owl-dots {
+    @include -breakpoint(md, down) {
+      display: none;
+    }
+  }
+}
+
+.slider--sport {
+  .slider-item-image {
+    height: 30rem;
+    @include -breakpoint(lg, down) {
+      height: 24rem;
+    }
+    @include -breakpoint(md, down) {
+      height: 20rem;
+    }
+  }
+  .slider-item-content,
+  .slider-item-title {
+    font-size: 5.6rem;
+    @include -breakpoint(lg, down) {
+      font-size: 4.8rem;
+    }
+    @include -breakpoint(md, down) {
+      font-size: 3.8rem;
+    }
+    @include -breakpoint(sm, down) {
+      font-size: 3rem;
+    }
+  }
+}
+
+.is-sticky-bar {
+  & ~ .prelive{
+    .slider--sport {
+     @include -breakpoint(md, down) {
+       margin-top: $ts-header-height-mobile + 1rem;
+     }
+    }
+  }
+}
+
+
+.slider--landing {
+  .slider-item-image {
+    height: 63rem;
+    @include -breakpoint(xxl, down) {
+      height: 55rem;
+    }
+    @include -breakpoint(xl, down) {
+      height: 45rem;
+    }
+    @include -breakpoint(lg, down) {
+      height: 40rem;
+    }
+    @include -breakpoint(md, down) {
+      height: 35rem;
+    }
+  }
+  .slider-item-article-container {
+    article {
+      max-width: 85rem;
+      padding: $ts-spacer * 4 0;
+      @include -breakpoint(lg, down) {
+        padding: $ts-spacer * 2 0;
+      }
+    }
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+  .slider-item-title {
+    font-size: 2.8rem;
+    @include -breakpoint(sm) {
+      font-size: 3.6rem;
+    }
+    @include -breakpoint(md) {
+      font-size: 4.5rem;
+    }
+    @include -breakpoint(xl) {
+      font-size: 5rem;
+    }
+  }
+}

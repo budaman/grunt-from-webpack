@@ -1,0 +1,99 @@
+.invalid-feedback {
+  position: relative;
+  display: none;
+  min-height: 3.8rem;
+  margin-top: 2rem;
+  padding: 0.8rem $ts-spacer * 0.75;
+  border-radius: 0.2rem;
+  font-size: 1.4rem;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -0.6rem;
+    left: 3rem;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 6px 0;
+    border-color: transparent;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+  }
+  @include -breakpoint(md, down) {
+    font-size: $ts-form-text-size-mobile;
+  }
+}
+
+.form-group:not(.form-group--sidebar) .invalid-feedback {
+  @include -breakpoint(xxl) {
+    position: absolute;
+    top: -0.3rem;
+    left: 100%;
+    width: 30rem;
+    margin-top: 3.6rem;
+    margin-left: $ts-spacer * 0.75;
+    z-index: 1;
+    &:before {
+      top: 1.3rem;
+      left: -0.6rem;
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.form-error-list {
+  ul {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    font-size: $ts-form-text-size;
+    @include -breakpoint(md, down) {
+      font-size: $ts-form-text-size-mobile;
+    }
+  }
+}
+
+.is-invalid,
+.is-valid {
+  border-left-width: 0.3rem;
+  & ~ .invalid-feedback,
+  &.invalid-feedback {
+    display: block;
+    color: $c1;
+  }
+  option {
+    color: $c2;
+  }
+}
+
+.is-valid {
+  @include -form-states($c8, true);
+}
+
+.is-invalid {
+  @include -form-states($c7, false);
+}
+
+.invalid-feedback {
+  &.is-invalid {
+    display: block;
+  }
+}
+
+.custom-control-input.is-invalid ~ .custom-control-indicator {
+  background-color: transparent;
+  > span {
+    color: $c7;
+  }
+}
+
+.form-check,
+.form-check-feedback-container {
+  .invalid-feedback {
+    @include -breakpoint(xxl) {
+      top: 50%;
+      margin-top: 0;
+      transform: translateY(-50%);
+    }
+  }
+}

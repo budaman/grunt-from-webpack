@@ -1,0 +1,22 @@
+// Core - OWL Slider
+
+.swipe-menu {
+  .owl-stage {
+    display: flex;
+  }
+}
+
+.swipe-menu-next {
+  width: 6rem;
+  padding: 0!important;
+  &, * {
+    transition: all 0.3s ease;
+  }
+  &:not(.is-active) {
+    width: 2rem;
+    .icon-arrow-left {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,306 @@
+.loyalty-content-wrapper {
+  width: 100%;
+  padding: $ts-spacer * 2.5 $ts-spacer * 3;
+  background: $c40;
+  color: $c2; //text
+  @include -breakpoint(md, up) {
+    min-height: 85rem;
+  }
+  @include -breakpoint(xl, down) {
+    padding: $ts-spacer;
+  }
+  &.rules {
+    background: none;
+  }
+  .loyalty-noproducts {
+    color: $c5;
+  }
+}
+
+//shop
+.shop-item-wrapper {
+  text-align: center;
+  padding: 0.5rem;
+  .shop-item {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    border: 2px solid transparent;
+
+    .featured-desc {
+      display: none;
+      width: 100%;
+      background: $c64;
+      color: $c2;
+      font-family: $ts-font-family-secondary;
+      text-transform: uppercase;
+      position: absolute;
+      top: 0;
+    }
+
+    &.featured {
+      border: 2px solid $c64;
+      .featured-desc {
+        display: block;
+      }
+    }
+  }
+}
+
+/*product wrapper*/
+.bubble-wrapper {
+  width: 14rem;
+  height: 14rem;
+  padding: 0.3rem;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  @include -breakpoint(sm, down) {
+    width: 10.2rem;
+    height: 10.2rem;
+    padding: 0.3rem;
+  }
+
+  .loyalty-level-1 & { /*bronze*/
+    background: $c55;
+    background: $c57;
+  }
+  .loyalty-level-2 & { /*silver*/
+    background: $c58;
+    background: $c60;
+  }
+  .loyalty-level-3 & { /*gold*/
+    background: $c61;
+    background: $c63;
+  }
+  .bubble {
+    width: 13.4rem;
+    height: 13.4rem;
+    display: block;
+    background: $c40;
+    border-radius: 50%;
+
+    @include -breakpoint(sm, down) {
+      width: 9.6rem;
+      height: 9.6rem;
+    }
+  }
+  .bubble-content {
+    color: #fff;
+    font-size: 2.8rem;
+    span {
+      display: block;
+      &:last-child {
+        font-size: 1.2rem;
+        padding: 0;
+        color: #acadaf;
+        display: block;
+      }
+    }
+  }
+  .bubble-image-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    margin: -0.4rem;
+    color: $c1;
+
+    img {
+      max-width: 14.5rem;
+      display: block;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+      @include -breakpoint(sm, down) {
+        max-width: 10.5rem;
+        padding-top: 0.5rem;
+      }
+    }
+  }
+  .info-icon {
+    cursor: pointer;
+    margin-top: 0.4rem;
+    margin-left: 0.8rem;
+  }
+  .info-bubble {
+    color: #fff;
+    display: block;
+    background: #505050;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    cursor: pointer;
+    transition: background $ts-transition-timing $ts-transition-timing-function;
+    &:hover {
+      background: $c3;
+    }
+  }
+}
+
+.prices-wrapper {
+  text-transform: none;
+  color: #acadaf;
+  opacity: 0.4;
+  font-size: 1.2rem;
+  .price-other {
+    line-height: 1.5;
+    @include -breakpoint(sm, down) {
+      font-size: 1rem;
+    }
+  }
+}
+
+//filter
+.loyalty-filter {
+  width: 100%;
+  margin-bottom: $ts-spacer * 2;
+  color: $c9;
+  text-transform: uppercase;
+
+  .owl-item {
+    white-space: nowrap;
+    &:first-child {
+      .nav-link {
+        padding-left: 0;
+      }
+    }
+  }
+
+  //--
+  .navbar-nav {
+
+    overflow: hidden;
+  }
+  .owl-stage-outer{
+    overflow: visible;
+    border-bottom: 1px solid $c5;
+  }
+
+  .owl-stage {
+    width: 100%;
+    flex-wrap: nowrap;
+    display: flex;
+  }
+
+  .swipe-menu-next {
+    background: linear-gradient(to right, rgba($c40, 0) 0%, $c40 30%, $c40 100%);
+    padding: 0 1rem 0 1.5rem !important;
+    color: $c5;
+    margin-bottom: 1px;
+    width: 1rem;
+  }
+
+  .nav-link {
+    padding: $ts-spacer $ts-spacer/2;
+    display: block;
+    color: $c5;
+    margin-bottom: -1px;
+    &.active {
+      color: $c3;
+      border-bottom: 1px solid $c3;
+    }
+  }
+}
+
+//static
+.lvl-tops {
+  margin-top: 3rem;
+  font-family: $ts-font-family-secondary;
+  font-size: 2rem;
+  @include -breakpoint(lg, down) {
+    font-size: 1.8rem;
+  }
+  > span {
+    font-size: 1.8rem;
+    @include -breakpoint(lg, down) {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.lvl-strip {
+  height: 1rem;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  background-size: cover;
+  .loyalty-level-1 & { /*bronzinis*/
+
+    background: $c55;
+    background: $c57;
+    border-radius: 5px 0 0 5px;
+    @include -breakpoint(sm, down) {
+      border-radius: 5px;
+    }
+  }
+
+  .loyalty-level-2 & { /*silver*/
+    background: $c58;
+    background: $c60;
+    @include -breakpoint(sm, down) {
+      border-radius: 5px;
+    }
+  }
+
+  .loyalty-level-3 & { /*gold*/
+    background: $c61;
+    background: $c63;
+    border-radius: 0 5px 5px 0;
+    @include -breakpoint(sm, down) {
+      border-radius: 5px;
+    }
+  }
+}
+
+.loyalty-slide {
+  position: relative;
+  min-height: 12rem;
+  max-height: 54rem;
+  margin: 0;
+  margin-bottom: 2vw;
+
+  .text-wrapper {
+    position: absolute;
+    top: 0;
+    padding: $ts-spacer * 2.5 $ts-spacer * 3;
+    @include -breakpoint(xl, down) {
+      padding: $ts-spacer;
+    }
+  }
+
+  .slide-title {
+    display: block;
+    font-family: $ts-font-family-secondary;
+    font-size: 7rem;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: $c1;
+    @include -breakpoint(xl, down) {
+      font-size: 6rem;
+    }
+    @include -breakpoint(lg, down) {
+      font-size: 5rem;
+    }
+    @include -breakpoint(md, down) {
+      font-size: 4.5rem;
+    }
+    @include -breakpoint(sm, down) {
+      font-size: 4rem;
+    }
+  }
+  .img-wrapper {
+    width: 100%;
+    min-height: 27rem;
+    max-height: 55rem;
+    overflow: hidden;
+    text-align: center;
+    background: $c0;
+    @include -breakpoint(lg, down) {
+      min-height: 25rem;
+    }
+  }
+}

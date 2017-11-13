@@ -1,0 +1,46 @@
+//Prelive only global style5
+
+.page-prelive {
+  .footer {
+    @include -breakpoint(xl, down) {
+      padding-bottom: 5.6rem;
+    }
+  }
+}
+
+.prelive-inner {
+  @include -breakpoint(xl) {
+    width: calc(100% - 34rem);
+  }
+  @include -breakpoint(xxl) {
+    width: calc(100% - 36rem);
+  }
+}
+
+.prelive-sidebar-right {
+  @include -breakpoint(xl) {
+    width: 34rem;
+  }
+  @include -breakpoint(xxl) {
+    width: 36rem;
+  }
+}
+
+.prelive-sidebar-left {
+  @include -breakpoint(md) {
+    width: 25rem;
+  }
+  @include -breakpoint(lg) {
+    width: 29rem;
+  }
+}
+
+.prelive-content {
+  min-height: 40rem;
+  @include -breakpoint(md) {
+    width: calc(100% - 25rem);
+  }
+  @include -breakpoint(lg) {
+    width: calc(100% - 29rem);
+  }
+}

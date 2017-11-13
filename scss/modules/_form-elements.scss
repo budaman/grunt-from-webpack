@@ -1,0 +1,331 @@
+$ts-form-text-size: 1.4rem;
+$ts-form-text-size-mobile: 1.3rem;
+
+.form-group {
+  position: relative;
+  margin-bottom: $ts-spacer;
+  label {
+    &:not(.form-check-label):not(.custom-control):not(.invalid-feedback) {
+      margin-bottom: 1rem;
+      font-family: $ts-font-family-secondary;
+      text-transform: uppercase;
+      font-size: $ts-form-text-size;
+      @include -breakpoint(md, down) {
+        margin-bottom: 0.5rem;
+        font-size: $ts-form-text-size-mobile;
+      }
+    }
+  }
+  @include -breakpoint(md, down) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.form-dark {
+  .form-group {
+    label {
+      color: $c1;
+    }
+  }
+}
+
+.form-header {
+  .form-control {
+    background: $c28;
+    width: 19.5rem;
+    padding: 0.8rem 2rem;
+    border-color: transparent;
+    border-radius: 0.3rem;
+    font-size: 1.3rem;
+    &,
+    &:focus {
+      color: $c1;
+    }
+  }
+  .input-group {
+    .form-control {
+      border-radius: 0.3rem 0 0 0.3rem;
+      border-right-color: $c16;
+    }
+  }
+  .input-group-addon {
+    background: $c28;
+    padding: 0 0.7rem;
+    border-radius: 0 0.3rem 0.3rem 0;
+  }
+}
+
+.form-control {
+  box-shadow: none;
+  padding-right: $ts-spacer;
+  padding-left: $ts-spacer;
+  &,
+  &:focus {
+    color: $c2;
+  }
+  @include -breakpoint(md, down) {
+    padding: 1.3rem 1.5rem;
+    font-size: $ts-font-size-base-mobile;
+  }
+}
+
+$ts-form-control-dark-height: 3.6rem;
+.form-control--dark {
+  height: 3.6rem;
+  padding: 0.5rem 1rem 0.6rem;
+  border-radius: 0.4rem;
+  font-family: $ts-font-family-secondary;
+  font-size: 1.4rem;
+  text-align: center;
+  &,
+  &:focus {
+    background-color: transparent;
+    border-color: #34363a;
+    color: $c1;
+  }
+}
+
+.input-group {
+  &.is-active {
+    .icon-eye-stroke {
+      display: none;
+    }
+    .icon-eye {
+      display: inline-block !important;
+    }
+  }
+  .form-control {
+    border-right-color: $c1;
+  }
+}
+
+.input-group-addon {
+  padding: 0 $ts-spacer;
+  border: 1px;
+  border-left-color: $c1;
+}
+
+.form-check {
+  .custom-control,
+  > label {
+    position: relative;
+    display: inline-flex;
+    padding-left: 3rem;
+    margin-right: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+.custom-control-input {
+  &:disabled {
+    ~ .custom-control-indicator {
+      background: 0;
+      > span:before {
+        background: $gray-100;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.custom-control-indicator {
+  font-family: "font-icons", sans-serif;
+  top: 0.3rem;
+  &:before {
+    position: relative;
+  }
+}
+
+[type="checkbox"] {
+  & ~ .custom-control-indicator {
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 0.2rem solid $c9;
+    border-radius: 0.2rem;
+    transition: opacity 0.3s ease;
+    &:before {
+      @extend .icon-checked;
+      top: -0.7rem;
+      left: 0.2rem;
+      font-size: 1rem;
+    }
+  }
+  &:checked ~ .custom-control-indicator {
+    background-color: $c3;
+    border-color: $c3;
+    &:before {
+      background-color: $c3;
+      color: $c1;
+    }
+  }
+  &:not(:checked) ~ .custom-control-indicator {
+    &:before {
+      opacity: 0;
+    }
+  }
+}
+
+[type="radio"] {
+  & ~ .custom-control-indicator {
+    width: 20px;
+    height: 20px;
+    &:before {
+      @extend .icon-circle-2;
+      top: -5px;
+      left: 0;
+      color: $c9;
+      font-size: 2rem;
+    }
+  }
+  &:checked ~ .custom-control-indicator {
+    &:before {
+      @extend .icon-checked-1;
+      color: $c30;
+    }
+  }
+}
+
+.form-check {
+  margin: 0 !important;
+  > label {
+    margin-right: 0 !important;
+  }
+}
+
+.form-check-label {
+  padding-left: 0
+}
+
+.form-check-inline {
+  .form-check {
+    &:not(:last-child) {
+      margin-right: $ts-spacer !important;
+    }
+  }
+}
+
+.custom-select {
+  min-width: 10rem;
+  padding-right: 5rem;
+  position: relative;
+  background-image: url('../images/background/select.svg');
+  background-size: 1.5rem;
+  background-repeat: no-repeat;
+  @include -breakpoint(md, down) {
+    padding: 1.3rem 1.5rem;
+    padding-right: 5rem;
+    font-size: $ts-font-size-base-mobile;
+  }
+  &.filter {
+    padding: 1.3rem 1.5rem;
+    font-size: 1.4rem;
+    @include -breakpoint(md, down) {
+      padding: 1.3rem 1.5rem;
+      font-size: $ts-font-size-base-mobile;
+    }
+  }
+  &.form-control--dark {
+    background-size: 1.2rem;
+    background-position: right 1rem center;
+    min-width: 0;
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    option {
+      color: $c2;
+    }
+  }
+}
+
+select.form-control:not([size]):not([multiple]):not(.filter) {
+  height: $custom-select-padding-y * 2 + $font-size-base * 1.25 + 0.2rem;
+  @include -breakpoint(md, down) {
+    height: 1.3rem * 2 + $font-size-base * 1.25;
+  }
+  &.form-control--dark {
+    height: $ts-form-control-dark-height;
+  }
+}
+
+.twitter-typeahead {
+  display: block !important;
+}
+
+//filters forms
+$from-filter-padding: 1rem;
+$form-filter-font-size-base: 1.5rem;
+
+.form-filter {
+  .form-control {
+    padding: $from-filter-padding;
+    font-size: 1.5rem;
+    color: $c10;
+  }
+  select.form-control.filter, input[type="date"].filter {
+    height: $from-filter-padding * 2 + $form-filter-font-size-base * 1.25 + 0.2rem;
+    @include -breakpoint(md, down) {
+      height: 1.3rem * 2 + $font-size-base * 1.25 + 0.1rem;
+    }
+  }
+  select.form-control.filter {
+    padding-right: $from-filter-padding * 5;
+  }
+  input[type="date"] {
+    @include -breakpoint(md, up) {
+      max-width: 20rem;
+    }
+  }
+  label {
+    font-family: $ts-font-family-primary;
+    font-size: $form-filter-font-size-base;
+    line-height: 1.25;
+    position: absolute;
+    left: $from-filter-padding;
+    top: $from-filter-padding;
+    margin: 0;
+    color: $c10;
+  }
+  .form-control, label {
+    color: $c5;
+  }
+  .input-with-label {
+    padding-left: 5rem;
+    @include -breakpoint(md, up) {
+      max-width: 15rem;
+    }
+  }
+  .label-filter-wrapper.date {
+    label {
+      @include -breakpoint(md, down) {
+        top: 1.5rem;
+      }
+    }
+  }
+  .label-filter-wrapper, .btn {
+    width: auto;
+    @include -breakpoint(md, down) {
+      width: 100%;
+    }
+  }
+  .form-inline, .form-control {
+    @include -breakpoint(md, down) {
+      width: 100%;
+    }
+  }
+}
+
+#details_birthdate {
+  select {
+    @include -breakpoint(sm, up) {
+      width: 32%;
+      margin-right: 2%;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    @include -breakpoint(sm, down) {
+      margin-bottom: $ts-spacer;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

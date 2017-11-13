@@ -1,0 +1,18 @@
+.birthday-message{
+  background-image: url('/assets/front/images/background/birthday-bg.jpg');
+  background-size: cover;
+  background-position: top center;
+
+
+  padding: $ts-spacer * 2 $ts-spacer;
+  @include -breakpoint(sm) {
+    padding: $ts-spacer * 2;
+  }
+  @include -breakpoint(md) {
+    padding: $ts-spacer * 3;
+  }
+  @include -breakpoint(lg) {
+    padding: $ts-spacer * 5;
+  }
+
+}

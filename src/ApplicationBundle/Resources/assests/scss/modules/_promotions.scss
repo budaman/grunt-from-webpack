@@ -1,0 +1,62 @@
+.content-promotions {
+  width: 100%;
+  padding: $ts-spacer * 2.5 $ts-spacer * 3;
+  @include -breakpoint(xl, down) {
+    padding: $ts-spacer;
+  }
+}
+
+.promotion-item-wrapper{
+  height: 100%;
+  padding-top: $ts-spacer * 2.5;
+  @include -breakpoint(xl, down) {
+    padding-top: $ts-spacer;
+  }
+  @include -breakpoint(md, down) {
+    padding-top: $ts-spacer * 0.75;
+  }
+}
+
+
+.promotion-item {
+  margin-right: $ts-spacer * 3;
+  border-radius: 5px;
+  border: 1px solid $c9;
+  color: $c10;
+  overflow: hidden;
+  height: 100%;
+
+  @include -breakpoint(xl, down) {
+    margin-right: $ts-spacer;
+  }
+  @include -breakpoint(md, down) {
+    margin-right: $ts-spacer * 0.75;
+  }
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.promotion-img-wrapper {
+  width: 100%;
+  max-height: 550px;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
+
+.promotion-actions {
+  width: 100%;
+  .btn {
+    display: block;
+    margin: 2rem auto;
+    width: 60%;
+  }
+}
+
+.promotions-cross-item {
+  margin-bottom: 2rem;
+}

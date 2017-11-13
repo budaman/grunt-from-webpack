@@ -1,0 +1,65 @@
+@mixin need-help-responsive() {
+  .need-help-heading {
+    br {
+      display: none;
+    }
+  }
+  .need-help-title {
+    color: $c1;
+    font-size: 1.6rem;
+  }
+  .need-help-item {
+    justify-content: center;
+    margin-top: $ts-spacer !important;
+    a {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+  }
+  .need-help-title-container {
+    margin-top: $ts-spacer * 0.75;
+    padding-left: 0!important;
+    text-align: center;
+  }
+  .need-help-link {
+    display: none;
+  }
+}
+
+.need-help--big {
+  @include -breakpoint(xl, down) {
+    @include need-help-responsive ();
+  }
+}
+
+.need-help--footer {
+  @include -breakpoint(md) {
+    .need-help-item {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  @include -breakpoint(md, down) {
+    @include need-help-responsive ();
+    .need-help-title {
+      font-size: 1.4rem;
+    }
+  }
+  li {
+    @include -breakpoint(md) {
+      &:not(:first-child) {
+        margin-top: $ts-spacer !important;
+      }
+    }
+    a {
+      color: $c5;
+    }
+  }
+}
+
+.need-help-bg {
+  background-image: url('/assets/front/images/background/need-help-mobile.jpg');
+  @include -breakpoint(xl) {
+    background-image: url('/assets/front/images/background/need-help.jpg');
+  }
+}

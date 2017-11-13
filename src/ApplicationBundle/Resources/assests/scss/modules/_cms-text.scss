@@ -1,0 +1,52 @@
+.cms-text {
+  color: $c10;
+}
+
+.cms-content-wrapper {
+  width: 100%;
+  padding: $ts-spacer * 2.5 $ts-spacer * 3;
+  @include -breakpoint(xl, down) {
+    padding: $ts-spacer $ts-spacer* 1.5;
+  }
+}
+
+.cms-content {
+  max-width: 84rem;
+}
+
+.cms-rules{
+  max-width: 68.6rem;
+}
+
+.cms-ordered-list {
+  ol {
+    counter-reset: section;
+    list-style-type: none;
+  }
+  > ol {
+    font-weight: 700;
+    padding-left: 0;
+    > li {
+      ol {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        font-weight: 400;
+
+      }
+      &:before {
+        counter-increment: section;
+        content: counters(section, ". ") ". ";
+      }
+    }
+  }
+  li {
+    margin: 1rem 0;
+    &:before {
+      margin-right: 1rem;
+      counter-increment: section;
+      content: counters(section, ". ") "  ";
+    }
+  }
+}
+
+

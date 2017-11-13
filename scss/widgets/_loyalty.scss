@@ -1,0 +1,95 @@
+.loyalty-widget-image {
+  height: 12.5rem;
+}
+
+.loyalty-widget-image--default {
+  background-image: url('/assets/front/images/loyalty/gold-small-2.png');
+}
+
+.loyalty-widget-divider {
+  height: 2px;
+  @include -breakpoint(md) {
+    margin-right: -3rem;
+    margin-left: -3rem;
+  }
+}
+
+.loyalty-widget-btn {
+  transition: opacity $ts-transition-timing $ts-transition-timing-function;
+  font-size: 1.4rem;
+  @include -breakpoint(sm, down) {
+    font-size: 1.2rem;
+    padding: 0.7rem 2.5rem;
+    &.btn-block {
+      padding-right: $ts-spacer / 2;
+      padding-left: $ts-spacer / 2;
+    }
+  }
+
+  &,
+  &:focus,
+  &:hover {
+    color: $c1;
+  }
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.loyalty-widget-btn--1 {
+  background: $c57;
+  &:active{
+    background: $c56;
+  }
+}
+
+.loyalty-widget-btn--2 {
+  background: $c60;
+  &:active{
+    background: $c59;
+  }
+}
+
+.loyalty-widget-btn--3 {
+  background: $c63;
+  &:active{
+    background: $c62;
+  }
+}
+
+.loyalty-widget-item {
+  @include -breakpoint(lg, down) {
+    display: none;
+  }
+}
+
+.loyalty-widget-item--mobile {
+  @include -breakpoint(lg, down) {
+    display: block!important;
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid $c15;
+    &, & *, .btn {
+      font-size: 1.7rem!important;
+      text-align: left;
+      text-transform: uppercase;
+      &,
+      &:focus,
+      &:hover {
+        background: $c1;
+        color: $c2;
+        text-decoration: none;
+        opacity: 1;
+      }
+    }
+    &:hover {
+      color: darken($c3, 5%);
+    }
+  }
+}
+
+.loyalty-widget--text-link{
+  font-family: $ts-font-family-primary;
+  @include -breakpoint(lg, down) {
+    font-family: $ts-font-family-secondary;
+  }
+}

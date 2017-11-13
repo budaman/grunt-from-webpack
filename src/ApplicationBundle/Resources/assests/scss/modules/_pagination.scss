@@ -1,0 +1,64 @@
+.pagination-wrapper {
+  border-top: 1px solid $c9;
+}
+
+.pagination {
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-item {
+  font-family: $ts-font-family-secondary;
+  font-size: 1.8rem;
+}
+
+.page-link {
+  @include -breakpoint(xl, down) {
+    padding-right: 1.6rem;
+    padding-left: 1.6rem;
+  }
+  @include -breakpoint(sm, down) {
+    padding-right: 1.1rem;
+    padding-left: 1.1rem;
+  }
+}
+
+.page-item--prev {
+  @include -breakpoint(lg) {
+    margin-right: $ts-spacer;
+  }
+  &.disabled{
+    cursor: not-allowed;
+    span{
+      color: $c46;
+    }
+  }
+}
+
+.page-item--next {
+  @include -breakpoint(lg) {
+    margin-left: $ts-spacer;
+  }
+  &.disabled{
+    cursor: not-allowed;
+    span{
+      color: $c46;
+    }
+  }
+}
+
+//Theme Dark
+.pagination-dark {
+  .page-item {
+    .page-link {
+      color: $c1;
+    }
+    &.active,
+    &:hover {
+      .page-link {
+        color: $c10;
+      }
+    }
+  }
+}

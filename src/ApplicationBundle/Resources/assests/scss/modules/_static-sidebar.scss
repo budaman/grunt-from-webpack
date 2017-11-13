@@ -1,0 +1,130 @@
+$static-menu-break: lg; //static sidebar menu converting breakpoint
+
+.navbar--static-sidebar {
+  $navbar-static-item-padding-top: 1.4rem;
+  $navbar-static-item-padding: $navbar-static-item-padding-top $ts-spacer * 0.75 1.5rem;
+  $navbar-static-item-border: 1px solid #212326;
+  @include -breakpoint($static-menu-break, down) {
+    background: none;
+    .navbar-nav {
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-height: calc(100vh - 4.5rem);
+      overflow-y: auto;
+      > li {
+        width: 100%;
+        border-top: $navbar-static-item-border;
+      }
+    }
+    .static-sidebar-link {
+      border: 1px solid #212326;
+      &,
+      &:focus {
+        color: $c1;
+        opacity: 1;
+      }
+      &:hover {
+        color: $c1;
+        opacity: 0.75;
+      }
+    }
+    .static-sidebar-link {
+      width: 100%;
+      padding: $navbar-static-item-padding;
+      &.logout {
+        color: $c25;
+        &:focus,
+        &:hover {
+          color: $c1;
+          opacity: 0.75;
+        }
+      }
+    }
+    [aria-expanded="true"] {
+      > .icon-arrow-down {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+}
+
+.static-menu-collapse {
+  //desktop menu
+  @include -breakpoint($static-menu-break, up) {
+    &.collapse {
+      display: block;
+    }
+    h6 {
+      font-size: 1.2rem;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      > li {
+        width: 100%;
+        > a {
+          color: $c1;
+          display: block;
+          padding: 1rem $ts-spacer * 0.75;
+          font-family: $ts-font-family-secondary;
+          font-size: 1.5rem;
+          font-weight: 400;
+          text-decoration: none;
+          text-transform: uppercase;
+          &:hover, &:focus, &:active {
+            color: $c3;
+          }
+        }
+        &.active {
+          > a {
+            color: $c3;
+          }
+        }
+      }
+    }
+  }
+  //mobile menu
+  @include -breakpoint($static-menu-break, down) {
+    margin-bottom: -0.1rem;
+    &:not(.promotion-single){
+      background: $c1;
+      padding-bottom: $ts-spacer * 2;
+    }
+    .static-menu-content{
+      background: $c15;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      > li {
+        width: 100%;
+        > a {
+          background: $c1;
+          display: block;
+          padding: 1.1rem $ts-spacer * 0.75;
+          border-bottom: 1px solid $c15;
+          font-family: $ts-font-family-secondary;
+          font-size: 1.7rem;
+          text-decoration: none;
+          text-transform: uppercase;
+          &:not(:hover) {
+            color: $c2;
+          }
+        }
+      }
+    }
+  }
+}
+
+.static-menu-collapse-title {
+  color: $c21;
+  padding: 0 $ts-spacer * 0.75;
+  @include -breakpoint(md, down) {
+    color: $c2;
+    padding-right: $ts-spacer * 0.75;
+    padding-left: $ts-spacer * 0.75;
+  }
+}
+

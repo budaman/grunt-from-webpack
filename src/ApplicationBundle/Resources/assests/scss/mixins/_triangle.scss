@@ -1,0 +1,32 @@
+@mixin -triangle($direction, $size, $color) {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: solid $size transparent;
+  @if $direction == 'top' {
+    top: -$size;
+    left: 0;
+    border-top-width: 0;
+    border-bottom-color: $color;
+  }
+  @if $direction == 'right' {
+    top: 0;
+    right: -$size;
+    border-right-width: 0;
+    border-left-color: $color;
+  }
+  @if $direction == 'bottom' {
+    bottom: -$size;
+    left: 0;
+    border-bottom-width: 0;
+    border-top-color: $color;
+  }
+  @if $direction == 'left' {
+    top: 0;
+    left: -$size;
+    border-left-width: 0;
+    border-right-color: $color;
+  }
+  z-index: 1;
+}

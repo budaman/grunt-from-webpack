@@ -1,0 +1,71 @@
+.breadcrumb-item {
+  position: relative;
+  margin-left: $ts-spacer * 1.5;
+  font-family: $ts-font-family-secondary;
+  a, span {
+    color: $c12;
+    text-decoration: none;
+    transition: color $ts-transition-timing ease;
+  }
+  &:not(.active):hover {
+    a, span {
+      color: $c1;
+    }
+  }
+  &.active {
+    a, span {
+      color: $c1;
+    }
+  }
+  &:before {
+    content: "|";
+    position: absolute;
+    top: -0.5rem;
+    left: -2rem;
+    transform: rotate(45deg);
+    font-size: 1.9rem;
+    font-weight: 300;
+    @include -breakpoint(xl, down) {
+      top: -.2rem;
+      left: -2rem;
+      font-size: 1.6rem;
+    }
+  }
+  &:first-child {
+    margin-left: 0;
+    &:before {
+      display: none;
+    }
+  }
+}
+
+//Prelive
+
+$ts-prelive-breadcrumbs-height: 10rem;
+$ts-prelive-breadcrumbs-height-mob: 7rem;
+$ts-prelive-breadcrumbs-bg-width: 50rem;
+
+.prelive-breadcrumbs {
+  height: $ts-prelive-breadcrumbs-height;
+  @include -breakpoint(xl, down) {
+    height: $ts-prelive-breadcrumbs-height-mob;
+    font-size: 1.4rem;
+  }
+}
+
+.prelive-breadcrumbs-bg {
+  width: $ts-prelive-breadcrumbs-bg-width;
+  @include -breakpoint(xl, down) {
+    width: $ts-prelive-breadcrumbs-bg-width * ($ts-prelive-breadcrumbs-height-mob / $ts-prelive-breadcrumbs-height);
+  }
+}
+
+.prelive-breadcrumbs-shadow {
+  width: $ts-prelive-breadcrumbs-bg-width / 2;
+  margin-right: $ts-prelive-breadcrumbs-bg-width / 2;
+  background: linear-gradient(to right, $c0 0%, rgba($c0, 0) 100%);
+  @include -breakpoint(xl, down) {
+    width: $ts-prelive-breadcrumbs-bg-width / 2 * ($ts-prelive-breadcrumbs-height-mob / $ts-prelive-breadcrumbs-height);
+    margin-right: $ts-prelive-breadcrumbs-bg-width / 2 * ($ts-prelive-breadcrumbs-height-mob / $ts-prelive-breadcrumbs-height);
+  }
+}

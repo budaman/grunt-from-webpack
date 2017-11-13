@@ -1,0 +1,27 @@
+.progress {
+  border-radius: $progress-border-radius;
+}
+
+.progress-bar {
+  background: linear-gradient(to left, $c3 0%, $c69 100%);
+  border-radius: $progress-border-radius;
+}
+
+//Progress Circle
+@include -progress-circle(3.2rem, lighten(#2E3237, 3%), $c3);
+
+//Themes
+.bonus-progress-container--dark {
+  .progress {
+    background-color: $c23;
+  }
+  .h-c-text {
+    color: $c1;
+  }
+  @include -breakpoint(md, down) {
+    font-size: 1.2rem;
+    .progress {
+      height: 0.6rem;
+    }
+  }
+}

@@ -1,0 +1,230 @@
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+
+// Color system
+$theme-colors: (
+        primary: $c3,
+        secondary: $c4,
+        success: $c8,
+        info: $c13,
+        warning: $c14,
+        danger: $c7,
+        light: $c15, //todo
+        dark: $c2
+);
+
+// Options
+$enable-rounded: false;
+$enable-transitions: true;
+
+// Spacing
+$spacer: $ts-spacer;
+$spacers: (
+        0: 0,
+        1: ($spacer * .25),
+        2: ($spacer * .5),
+        3: ($spacer * .75),
+        4: $spacer,
+        5: ($spacer * 1.5),
+        6: ($spacer * 2)
+);
+
+//Body
+$body-bg:       $c15;
+$body-color:    $c2;
+
+//Links
+$link-color:            $c3;
+$link-decoration:       none;
+$link-hover-color:      darken($link-color, 5%);
+$link-hover-decoration: underline;
+
+// Paragraphs
+$paragraph-margin-bottom: 1rem;
+
+// Grid breakpoints
+$grid-breakpoints: (
+        xs: map-get($ts-breakpoints, xs),
+        sm: map-get($ts-breakpoints, sm),
+        md: map-get($ts-breakpoints, md),
+        lg: map-get($ts-breakpoints, lg),
+        xl: map-get($ts-breakpoints, xl),
+);
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+// Grid columns
+$grid-columns: 24;
+$grid-gutter-width-base: 2rem;
+
+// Components
+$line-height-lg:         $line-height-base;
+$line-height-sm:         1.5;
+
+//TODO
+$transition-base:        all .2s ease-in-out;
+$transition-fade:        opacity .15s linear;
+$transition-collapse:    height .35s ease;
+
+// Fonts
+$font-family-sans-serif: $ts-font-family-primary;
+$font-family-base:       $font-family-sans-serif;
+
+$font-size-base: $ts-font-size-base;
+$font-size-lg:   $ts-font-size-base * 1.25;
+$font-size-sm:   $ts-font-size-base * 0.875;
+
+$font-weight-bold: 600;
+$line-height-base: 1.618;
+
+$h1-font-size: 2.8rem;
+$h2-font-size: 1.8rem;
+$h3-font-size: 1.6rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 1.4rem;
+$h6-font-size: 1.3rem;
+
+$headings-font-family: $ts-font-family-secondary;
+$headings-font-weight: 400;
+$headings-line-height: 1.2;
+$headings-color: $c6;
+
+$text-muted: $c5;
+
+$hr-border-color: $c9;
+
+// Buttons
+$input-btn-padding-x:       6.5rem;
+$input-btn-padding-y:       1.5rem;
+
+$input-btn-padding-x-sm:    4rem;
+$input-btn-padding-y-sm:    1.2rem;
+$input-btn-line-height-sm:  1.25;
+
+$btn-focus-box-shadow: none;
+
+// Forms
+$input-color:                    $c2;
+$input-border-color:             $c9;
+$input-focus-border-color:       $c9;
+$input-focus-box-shadow:         none;
+
+$input-placeholder-color:        $c21;
+
+$input-group-addon-bg:          $c1;
+
+$custom-control-indicator-size:       2rem;
+$custom-control-indicator-bg:         transparent;
+
+$custom-control-indicator-checked-color:      $c30;
+$custom-control-indicator-checked-bg:         transparent;
+
+$custom-control-indicator-active-color:      $c30;
+$custom-control-indicator-active-bg:         transparent;
+
+$custom-control-indicator-focus-box-shadow: none;
+
+$custom-checkbox-indicator-icon-checked: none;
+$custom-checkbox-indicator-icon-indeterminate: none;
+$custom-radio-indicator-icon-checked: none;
+
+$custom-select-padding-x:          2rem;
+$custom-select-padding-y:          1.5rem;
+
+$custom-select-indicator-padding:   1rem;
+$custom-select-indicator-color: $c5;
+$custom-select-indicator:     none;
+
+$custom-select-focus-border-color: $input-border-color;
+$custom-select-focus-box-shadow:   none;
+$custom-file-focus-box-shadow: none;
+
+// Dropdowns
+$dropdown-min-width:             8rem;
+$dropdown-padding-y:             0;
+$dropdown-border-color:          transparent;
+$dropdown-divider-bg:            rgba($c22, 0.4);
+
+$dropdown-link-color:            $c2;
+$dropdown-link-hover-color:      darken($c2, 5%);
+
+$dropdown-item-padding-x:        0;
+
+// Navbar
+$navbar-padding-x: $spacer;
+$navbar-padding-y: ($spacer / 2);
+
+$navbar-toggler-padding-x:           0;
+$navbar-toggler-padding-y:           0;
+
+// Pagination
+$pagination-padding-x:                2.4rem;
+$pagination-padding-y:                .5rem;
+
+$pagination-color:                     $c2;
+$pagination-bg:                        transparent;
+$pagination-border-color:              transparent;
+
+$pagination-hover-color:               $c46;
+$pagination-hover-bg:                  transparent;
+$pagination-hover-border-color:        transparent;
+
+$pagination-active-color:              $c46;
+$pagination-active-bg:                 transparent;
+$pagination-active-border-color:       transparent;
+
+$pagination-disabled-color:            $c2;
+$pagination-disabled-bg:               transparent;
+$pagination-disabled-border-color:     transparent;
+
+// Cards
+$card-border-width:        1px;
+$card-border-color:        $c9;
+$card-cap-bg:              $c1;
+
+// Badges
+$badge-font-size:             1.1rem;
+$badge-font-weight:           400;
+$badge-padding-x:             .5em;
+$badge-padding-y:             .25em;
+
+// Modals
+$modal-inner-padding:         1rem 5rem 7.5rem;
+$modal-dialog-margin:         0.75rem;
+$modal-dialog-margin-y-sm-up: 3rem;
+$modal-content-border-color:  transparent;
+$modal-backdrop-bg:           $c23;
+$modal-backdrop-opacity:      0.8;
+$modal-header-padding:        6.5rem 5rem 0;
+$modal-md:                    66rem;
+
+// Alerts
+$alert-padding-x:             $spacer * 0.75;
+$alert-padding-y:             $spacer * 0.75;
+$alert-margin-bottom:         0;
+$alert-link-font-weight:      400;
+$alert-border-width:          $border-width;
+
+// Progress bars
+$progress-height:               0.8rem;
+$progress-font-size:            1.4rem;
+$progress-bg:                   $c68;
+$progress-border-radius:        0.4rem;
+$progress-bar-color:            $c1;
+$progress-bar-bg:               $c3;
+
+// Breadcrumbs
+
+//TODO
+$breadcrumb-padding-y:          .75rem !default;
+$breadcrumb-padding-x:          1rem !default;
+$breadcrumb-item-padding:       .5rem !default;
+
+$breadcrumb-margin-bottom:      0;
+
+$breadcrumb-bg:                 transparent;
+$breadcrumb-divider-color:      $c12;
+$breadcrumb-active-color:       $c3;
+$breadcrumb-divider:            "|"

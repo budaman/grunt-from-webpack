@@ -1,0 +1,47 @@
+$popper-tooltip-width: 36rem;
+$popper-tooltip-arrow-size: 7px;
+
+.popper-tooltip,
+.popper-tooltip-arrow {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.popper-tooltip-container:hover {
+  .popper-tooltip,
+  .popper-tooltip-arrow {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.popper-tooltip {
+  position: absolute;
+  background: $c18;
+  width: $popper-tooltip-width;
+  max-width: calc(100vw - 5rem);
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  overflow: hidden;
+  transition: $ts-transition-default;
+  z-index: 1;
+  &[x-placement="top-start"] {
+    margin-left: 30%;
+  }
+}
+
+.popper-tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transition: $ts-transition-default;
+}
+
+[x-placement="top-start"] ~ .popper-tooltip-arrow {
+  bottom: calc(100% + 3px);
+  left: 50%;
+  margin: $popper-tooltip-arrow-size - 10px 0 0 $popper-tooltip-arrow-size * -1;
+  border-left: $popper-tooltip-arrow-size solid transparent;
+  border-right: $popper-tooltip-arrow-size solid transparent;
+  border-top: $popper-tooltip-arrow-size solid $c18;
+}

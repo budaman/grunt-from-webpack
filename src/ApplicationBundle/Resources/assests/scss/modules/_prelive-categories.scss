@@ -1,0 +1,106 @@
+//Prelive - Lazybu pasiula (left sidebar main widget)
+
+.prelive-sports-container-mobile {
+  @include -breakpoint(md, down) {
+    border-top: 0.5rem solid $c15;
+    border-bottom: 0.5rem solid $c15;
+  }
+}
+
+.prelive-sports-item {
+  border-top: 1px solid $c9;
+  &.is-active {
+    .prelive-sports-link {
+      &:not([aria-expanded="true"]) {
+        &, &:focus, &:hover {
+          color: $c3;
+        }
+      }
+    }
+  }
+}
+
+.prelive-sports--featured {
+  .prelive-sports-item {
+    &:first-child {
+      border-top: none;
+    }
+  }
+}
+
+.prelive-sports-link {
+  &, &:focus, &:hover {
+    color: $c2;
+  }
+  &:not([aria-expanded="true"]) {
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+  &[aria-expanded="true"] {
+    background-color: $c3;
+    &,
+    .prelive-sports-title {
+      color: $c1;
+    }
+    .prelive-sports-thumb {
+      background-color: $c20;
+      &:before {
+        display: block;
+      }
+    }
+    .prelive-sports-thumb-icon {
+      filter: invert(100%);
+    }
+    .prelive-sports-count {
+      color: $c1;
+    }
+  }
+}
+
+.prelive-sports-thumb {
+  width: 4.5rem;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 1.5rem;
+    bottom: -0.5rem;
+    display: none;
+    width: 0;
+    height: 0;
+    border: solid 0.5rem transparent;
+    border-bottom-width: 0;
+    border-top-color: $c20;
+    z-index: 2;
+  }
+}
+
+.prelive-sports-title {
+  width: calc(100% - 4.5rem) ;
+  @include -breakpoint(lg, down) {
+    font-size: 1.4rem;
+  }
+}
+
+.prelive-sports-sublink {
+  &:hover,
+  &:focus {
+    opacity: 0.75;
+  }
+}
+
+.prelive-sports--featured {
+  .prelive-sports-title {
+    @include -breakpoint(lg, down) {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.prelive-sports-container-inner {
+  @include -breakpoint(md, down) {
+    max-height: calc(100vh - 4.5rem - 5.5rem - 5.5rem - 5.6rem); //calc(screen height - header bar - prelive nav toggler - swipe menu - betslip)
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}

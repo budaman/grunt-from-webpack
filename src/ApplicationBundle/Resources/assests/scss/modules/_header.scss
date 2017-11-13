@@ -1,0 +1,22 @@
+.header {
+  .container-fluid {
+    max-width: none;
+  }
+}
+
+.header-notice-text {
+  padding: 0.25rem 0;
+  margin: 0 -3%;
+  transform: scale(0.9);
+  @include -breakpoint(md, down) {
+    padding: 0;
+    margin: -2px -15%;
+    transform: scale(0.75);
+  }
+}
+
+.is-nav-opened {
+  .header-inner {
+    z-index: 100;
+  }
+}

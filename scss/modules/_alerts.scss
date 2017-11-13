@@ -1,0 +1,10 @@
+.alert {
+  border-radius: 0.2rem;
+  .close {
+    top: 0.2rem;
+    margin: $ts-spacer * -0.75 0 $ts-spacer * -0.75 auto;
+    cursor: pointer;
+  }
+}
+
+@include -alerts($ts-custom-alerts-colors, false);

@@ -1,0 +1,93 @@
+$ts-link-hover-opacity: 0.7;
+
+.link-undecorated {
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.link-underline {
+  text-decoration: underline;
+}
+
+.link-muted {
+  transition: color $ts-transition-timing $ts-transition-timing-function, opacity $ts-transition-timing $ts-transition-timing-function;
+  color: $c5;
+  &:focus,
+  &:hover {
+    color: $c5;
+    opacity: $ts-link-hover-opacity;
+  }
+}
+
+.link-muted-bordered {
+  transition: color $ts-transition-timing $ts-transition-timing-function, opacity $ts-transition-timing $ts-transition-timing-function;
+  display: inline-block;
+  color: $c5;
+  border-bottom: 1px solid $c5;
+  &:focus,
+  &:hover {
+    color: $c5;
+    opacity: $ts-link-hover-opacity;
+    text-decoration: none;
+  }
+}
+
+.link-white {
+  transition: color $ts-transition-timing $ts-transition-timing-function, opacity $ts-transition-timing $ts-transition-timing-function;
+  color: $c1;
+  &:focus,
+  &:hover {
+    color: $c1;
+    opacity: $ts-link-hover-opacity;
+  }
+}
+
+.link-text {
+  transition: color $ts-transition-timing $ts-transition-timing-function;
+  &,
+  &:focus,
+  &:hover {
+    color: $c2;
+  }
+}
+
+.link-opacity {
+  transition: opacity $ts-transition-timing $ts-transition-timing-function;
+  &:hover {
+    opacity: $ts-link-hover-opacity;
+  }
+}
+
+.link-hover-primary {
+  transition: color $ts-transition-timing $ts-transition-timing-function, opacity $ts-transition-timing $ts-transition-timing-function;
+  &:hover {
+    opacity: 1;
+    color: $c3;
+  }
+}
+
+.link-hover-white {
+  transition: color $ts-transition-timing $ts-transition-timing-function, opacity $ts-transition-timing $ts-transition-timing-function;
+  &:hover {
+    opacity: 1;
+    color: $c1;
+  }
+}
+
+.link-active-danger {
+  transition: color $ts-transition-timing $ts-transition-timing-function, opacity $ts-transition-timing $ts-transition-timing-function;
+  &:active {
+    color: $c7;
+    opacity: 1;
+  }
+}
+
+.link-active-success {
+  transition: color $ts-transition-timing $ts-transition-timing-function, opacity $ts-transition-timing $ts-transition-timing-function;
+  &:active {
+    color: $c8;
+    opacity: 1;
+  }
+}

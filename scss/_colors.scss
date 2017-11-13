@@ -1,0 +1,134 @@
+/*
+Colors variables
+*/
+
+$c0: #000; //Black
+$c1: #fff; //White
+$c2: #222427; //Text
+$c3: #0075bd; //Primary
+$c4: #0076b7; //Secondary
+$c5: #858585; //rgba($c2, 0.6); //Muted
+$c6: $c2; //Heading
+$c7: #d8494d; //Error, danger - text
+$c8: #51c33f; //Success - text
+$c9: #d7d7d7; //Border
+$c10: #595b5d; //Cms text
+$c11: rgba($c2, 0.8);
+$c12: #7f7f7f; //Menu, help icon
+$c13: $c2; //Info - text
+$c14: #ddcc5f; //warning - text
+$c15: #e4e4e4; //Bg inner, search bg
+$c16: #101113; //Bg header, footer
+$c17: #2d3034; //Header border, footer hr, prelive filter btn back border, icons circle
+$c18: #f4f4f5; //Btn secondary, banks border, tooltip-info bg
+$c19: linear-gradient(to top, #008EE8 0%,  #00A1FF 100%); //Btn gradient
+$c20: #0066a5; //Sidebar menu dark blue active, lazybu kortele mobile
+$c21: $c5; //Placeholder
+$c22: rgba(#b2b3b4, 0.4); //Dropdown divider
+$c23: #2f3338; //Header add money drop down, modal backdrop bg, progress bg
+$c24: #26292d; //Header add money drop border
+$c25: #535353; //Logout mobile
+$c26: #1d1d1d; //Bg Registration page
+$c27: lighten($c2, 40%); //Muted on dark bg
+$c28: #2c2c2c; //Header inputs, progress
+$c29: #eff0ef; //Reg step circle
+$c30: #009ff7; //Blue lighter - checkbox, reg badge
+$c31: #f3c9ca; //Form alert bg - danger
+$c32: #cbedc6; //Form alert bg - success
+$c33: #d9d9d9; //Form alert bg - info
+$c34: #eee6af; //Form alert bg - warning
+$c35: #ffea01; //Header menu highlight
+$c36: #4c4f52; //Casino - menu bg
+$c37: #1f2225; //Casino - bg
+$c38: #505050; //Btn secondary outline border, star
+$c39: #df2829; //Red badge
+$c40: #151618; //Casino - game bg
+$c41: #ffd800; //Status waiting
+$c42: #e31e24; //Status lost
+$c43: #00bd4c; //Status won
+$c44: #3993d0; //Status cashout
+$c45: #f2f2f2; //Locations item state gray, prelive list bg, disabled prelive button bg
+$c46: #b8b8b9; //Pagination active, disabled prelive button text
+$c47: #2b2b2b; //Prelive - sidebar right bg
+$c48: #efefef; //Prelive - sidebar left thumb bg
+$c49: #0067b7; //Prelive - betslip type border
+$c50: #3e9ec8; //Prelive - betslip type disabled
+$c51: #1d2023; //Prelive - betslip event bg nt 1
+$c52: #151719; //Prelive - betslip event bg nt 2
+$c53: #00a5ff; //Prelive - betslip event
+$c54: #282a2d; //Prelive - betslip hr
+$c55: #CD9367; //loyalty level 1 default - bronze 1
+$c56: #9B6144; //loyalty level 1 default - bronze 2
+$c57: linear-gradient(to bottom, $c55 0%,  $c56 100%); //loyalty level 1 gradient - bronze
+$c58: #E6E6E6; //loyalty level 2 default - silver 1
+$c59: #727272; //loyalty level 2 default - silver 2
+$c60: linear-gradient(to bottom, $c58 0%,  $c59 100%); //loyalty level 2 gradient - silver
+$c61: #E5C465; //loyalty level 3 default - gold 1
+$c62: #AA8633; //loyalty level 3 default - gold 2
+$c63: linear-gradient(to bottom, $c61 0%,  $c62 100%); //loyalty level 3 gradient - gold
+$c64 :#f7ed2b; //loyalty featured color
+$c65: #fcd93e; //Prelive - list star
+$c66: #212326; //Header mobile menu border
+$c67: #979898; //Prelive - list muted
+$c68: #e1e1e1; //Progress bg
+$c69: #1b4e9b; //Progress bar bg
+$c70: #DDDEDE; //Header - dropdown inner arrow
+
+/*
+Theme colors schemes
+*/
+
+//alerts
+$ts-custom-alerts-colors: (
+        danger: $c31 $c7 $c2, //bg, border, color
+        success: $c32 $c8 $c2,
+        info: $c33 $c1 $c2,
+        warning: $c34 $c14 $c2,
+);
+
+//flash messages
+$ts-custom-flash-messages-colors: (
+        danger: $c7 $c7 $c1, //bg, border, color
+        success: $c8 $c8 $c1,
+        info: $c1 $c33 $c2,
+        warning: $c14 $c14 $c1,
+);
+
+/*
+Colors helpers
+*/
+
+$ts-colors-helpers: (
+        base: (
+                'black' : $c0, //Output: .h-bg-black {..} .h-c-black {..}
+                'white' : $c1,
+                'text' : $c2,
+                'primary' : $c3,
+                'secondary' : $c4,
+                'muted' : $c5,
+                'muted-dark' : $c27,
+                'danger' : $c7,
+                'success' : $c8,
+                'info' : $c13,
+                'warning' : $c14,
+        ),
+        custom: (
+                '9' : $c9, //Output: .h-bg9 {..} and .h-c9 {..}
+                '11' : $c11,
+                '12' : $c12,
+                '15' : $c15,
+                '16' : $c16,
+                '17' : $c17,
+                '26' : $c26,
+                '30' : $c30,
+                '35' : $c35,
+                '36' : $c36,
+                '37' : $c37,
+                '38' : $c38,
+                '40' : $c40,
+                '45' : $c45,
+                '47' : $c47,
+                '48' : $c48,
+                '70' : $c70,
+        )
+);

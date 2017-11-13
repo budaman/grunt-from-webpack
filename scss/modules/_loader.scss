@@ -1,0 +1,37 @@
+//TODO: Make more beautiful loader
+
+$ts-loader-width: 7rem;
+$ts-loader-height: 7rem;
+$ts-loader-border: 0.6rem;
+$ts-loader-color-active: $c36;
+$ts-loader-color: rgba($c36, 0.5);
+
+.loader-container {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: $ts-loader-height * 1.7;
+  transition: $ts-transition-default;
+  &:not(.is-active) {
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+  }
+}
+
+.loader {
+  border: $ts-loader-border solid $ts-loader-color;
+  border-top-color: $ts-loader-color-active;
+  border-radius: 50%;
+  width: $ts-loader-width;
+  height: $ts-loader-height;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(360deg) }
+}

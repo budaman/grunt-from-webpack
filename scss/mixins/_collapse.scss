@@ -1,0 +1,14 @@
+@mixin -collapse-disable($breakpoint) {
+  .collapse-disable-#{$breakpoint} {
+    &.collapsing {
+      height: auto;
+      overflow: visible;
+    }
+    &.collapse {
+      display: block;
+    }
+  }
+  .collapse-disable-btn-#{$breakpoint} {
+    pointer-events: none;
+  }
+}

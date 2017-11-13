@@ -1,0 +1,353 @@
+//Prelive - live betting list
+
+.prelive-list-league {
+  @include -breakpoint(sm, down) {
+    margin-bottom: 2.5rem;
+  }
+  & + .prelive-list-league {
+    margin-top: $ts-spacer * 0.25;
+  }
+}
+
+.prelive-list-league-header {
+  min-height: 5.3rem;
+  @include -breakpoint(sm, down) {
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+  }
+}
+
+.prelive-list-league-star {
+  &:hover,
+  &.is-active {
+    .icon {
+      color: $c65;
+    }
+  }
+}
+
+.prelive-list-league-toggler {
+  width: 5.2rem;
+  &[aria-expanded="false"] {
+    .prelive-list-icon-minus {
+      display: none;
+    }
+  }
+  &[aria-expanded="true"] {
+    .prelive-list-icon-plus {
+      display: none;
+    }
+  }
+}
+
+.prelive-list-league-choice,
+.prelive-list-league-choice-title,
+.prelive-list-league-row,
+.prelive-list-game-item-row {
+  min-height: 4.5rem;
+}
+
+.prelive-list-league-date {
+  @include -breakpoint(sm) {
+    line-height: 1.2;
+  }
+  @include -breakpoint(lg, down) {
+    width: 11rem !important;
+  }
+  @include -breakpoint(sm, down) {
+    background-color: transparent;
+    margin-bottom: 0.2rem;
+    color: $c5;
+    box-shadow: none !important;
+  }
+}
+
+.prelive-list-league-total {
+  @include -breakpoint(lg, down) {
+    width: 3.5rem !important;
+  }
+  @include -breakpoint(sm, down) {
+    background-color: transparent;
+    box-shadow: none !important;
+    .link-text {
+      &:not(:hover) {
+        color: $c67;
+      }
+    }
+  }
+}
+
+.prelive-list-league-rate {
+  color: $c2;
+  @include -breakpoint(1345px, down) {
+    font-size: 1.6rem !important;
+  }
+  @include -breakpoint(lg, down) {
+    font-size: 1.4rem !important;
+  }
+}
+
+.prelive-list-league-choice,
+.prelive-list-game-item-choice {
+  color: $c2;
+  @include -breakpoint(sm, down) {
+    color: $c5;
+  }
+  .is-active &,
+  &:hover,
+  &:active {
+    &,
+    .prelive-list-league-rate {
+      color: $c1;
+    }
+  }
+  .is-active &,
+  &:hover {
+    background-color: $c3;
+    .prelive-list-league-choice-title {
+      &:before {
+        background-image: linear-gradient(to right, rgba($c3, 0) 0%, $c3 100%);
+      }
+    }
+  }
+  @include -breakpoint(md, down) {
+    font-size: 1.3rem !important;
+  }
+  .disabled &{
+    cursor: not-allowed;
+    user-select: none;
+    background-color: $c45;
+    color: $c46;
+    .prelive-list-league-choice-title {
+      &:before {
+        background-image: linear-gradient(to right, rgba($c45, 0) 0%, $c45 100%);
+      }
+    }
+  }
+}
+
+//Correct x padding in problematic responsive ranges
+.prelive-list-league-choice {
+  @media (min-width: 1280px) and (max-width: 1345px),
+  (min-width: 767px) and (max-width: 880px),
+  (min-width: 0) and (max-width: 420px) {
+    padding-right: 0.8rem !important;
+    padding-left: 0.8rem !important;
+    &.is-condition-x {
+      padding-right: 0.5rem !important;
+      padding-left: 0.5rem !important;
+    }
+  }
+}
+
+.has-title-truncate {
+  .prelive-list-league-choice-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    &:before {
+      background-image: linear-gradient(to right, rgba($c1, 0) 0%, $c1 70%, $c1 100%);
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 15px;
+    }
+  }
+}
+
+.prelive-list-btn-back {
+  border-right: 1px solid $c17;
+  .icon {
+    left: 0.2rem;
+  }
+  &:hover {
+    background-color: $c3;
+    .icon {
+      color: $c1;
+    }
+  }
+}
+
+.prelive-not-event-found {
+  padding: 12rem 0;
+}
+
+// List Filter in Match page
+
+.prelive-list-filter {
+  min-height: 1px;
+  @include -breakpoint(md, down) {
+    margin-bottom: 10.5rem;
+  }
+  &.is-position-mob {
+    .prelive-list-filter-title {
+      order: 1;
+    }
+    .prelive-list-filter-info {
+      top: -0.1rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.prelive-list-filter-title {
+  @include -breakpoint(sm, down) {
+    font-size: 1.5rem;
+  }
+}
+
+.prelive-list-filter-inner {
+  @include -breakpoint(md, down) {
+    height: $ts-prelive-list-filter-mobile;
+  }
+}
+
+.prelive-list-filter-sticky {
+  @include -breakpoint(md, down) {
+    position: absolute!important;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
+.is-sticky-prelive-list-filter {
+  .prelive-list-filter-sticky {
+    @include -breakpoint(md, down) {
+      position: fixed!important;
+      transition: top 0.2s ease;
+      z-index: 12;
+    }
+  }
+}
+
+.header.is-sticky-bar ~ #main .prelive .prelive-list-filter-menu {
+  transition: margin 0.3s ease;
+}
+
+.header.is-scrolling-down ~ #main .prelive .prelive-list-filter.is-position-mob .prelive-list-filter-menu {
+  @include -breakpoint(md, down) {
+    margin-top: -6rem;
+  }
+}
+
+.prelive-list-filter-info {
+  @include -breakpoint(md, down) {
+    line-height: 1.2;
+  }
+}
+
+.prelive-list-filter-menu {
+  .nav-item {
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+    &:before {
+      content: '';
+      position: absolute;
+      right: $ts-spacer * 0.5;
+      bottom: 0;
+      left: $ts-spacer * 0.5;
+      border-bottom: 2px solid transparent;
+      @include -breakpoint(md) {
+        right: $ts-spacer * 0.75;
+        left: $ts-spacer * 0.75;
+      }
+      @include -breakpoint(xl) {
+        right: $ts-spacer;
+        left: $ts-spacer;
+      }
+    }
+    &.is-active {
+      &:before {
+        border-bottom-color: $c3;
+      }
+    }
+  }
+}
+
+// List Form Filter in League pages
+
+.prelive-list-form {
+  .btn {
+    min-width: 7rem;
+    @include -breakpoint(sm) {
+      min-width: 13.5rem;
+    }
+  }
+}
+
+.prelive-list-form-filter-items {
+  max-height: 50rem;
+  overflow: hidden;
+  transition: all 0s;
+  .is-expanded & {
+    transition: all 0.5s ease;
+  }
+  .prelive-list-form:not(.is-expanded) & {
+    max-height: 2.5rem;
+  }
+}
+
+.prelive-list-form-filter-item {
+  min-width: 1px;
+  transition: all 0.75s ease;
+  float: left;
+  .is-expanded & {
+    min-width: 100%;
+    @include -breakpoint(420px) {
+      min-width: 50%;
+      max-width: 50%;
+    }
+    @include -breakpoint(sm) {
+      min-width: 33.3%;
+      max-width: 33.3%;
+    }
+    @include -breakpoint(lg) {
+      min-width: 25%;
+      max-width: 25%;
+    }
+    @include -breakpoint(xl) {
+      min-width: 33.33%;
+      max-width: 33.33%;
+    }
+    @include -breakpoint(xxl) {
+      min-width: 25%;
+      max-width: 25%;
+    }
+    @include -breakpoint(1750px) {
+      min-width: 20%;
+      max-width: 20%;
+    }
+  }
+  .form-check,
+  .form-check-label {
+    max-width: 100%;
+  }
+  .custom-control-description {
+    font-size: 1.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.prelive-list-form-expand {
+  .is-expanded & {
+    .icon {
+      transform: rotateX(180deg);
+    }
+  }
+}
+
+.page-prelive-match .prelive-filter-sticky{
+  @include -breakpoint(md, down) {
+    display: none;
+  }
+}

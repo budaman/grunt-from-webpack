@@ -1,0 +1,96 @@
+$ts-casino-menu-height: 6.2rem;
+$ts-casino-menu-padding-h: 3.2rem;
+
+.casino-menu {
+  box-shadow: 0 5px 10px 0 rgba($c37, 0.2);
+  height: $ts-casino-menu-height;
+  @include -breakpoint(lg, down) {
+    height: $ts-casino-menu-height - 0.5rem;
+  }
+  @include -breakpoint(xs, down) {
+    top: -1px;
+  }
+  .owl-stage {
+    display: flex;
+    @media (min-width: $ts-xl) and (max-width: $ts-xxl) {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+    @include -breakpoint(sm, down) {
+      padding-right: $ts-spacer * 0.5;
+      padding-left: $ts-spacer * 0.5;
+    }
+  }
+  .nav-item {
+    .nav-link {
+      display: flex;
+      height: $ts-casino-menu-height;
+      padding: 0 $ts-casino-menu-padding-h;
+      white-space: nowrap;
+      text-transform: uppercase;
+      @include -breakpoint(xxl, down) {
+        padding-right: $ts-spacer;
+        padding-left: $ts-spacer;
+      }
+      @include -breakpoint(lg, down) {
+        height: $ts-casino-menu-height - 0.5rem;
+        font-size: 1.4rem;
+      }
+      @include -breakpoint(sm, down) {
+        padding-right: $ts-spacer * 0.5;
+        padding-left: $ts-spacer * 0.5;
+      }
+      &:focus {
+        opacity: 1;
+      }
+      &:hover {
+        opacity: 0.65;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        right: $ts-casino-menu-padding-h;
+        bottom: 0;
+        left: $ts-casino-menu-padding-h;
+        border-bottom: 0.2rem solid transparent;
+        @include -breakpoint(xxl, down) {
+          right: $ts-casino-menu-padding-h * 0.6;
+          left: $ts-casino-menu-padding-h * 0.6;
+        }
+        @include -breakpoint(lg, down) {
+          right: $ts-spacer;
+          left: $ts-spacer;
+        }
+        @include -breakpoint(sm, down) {
+          right: $ts-spacer * 0.5;
+          left: $ts-spacer * 0.5;
+        }
+      }
+    }
+    &.is-nav-item-active {
+      .nav-link:before {
+        border-color: $c1;
+      }
+    }
+  }
+  .swipe-menu {
+    margin: 0 -2rem;
+    @include -breakpoint(xl, down) {
+      margin: 0 -1.5rem;
+    }
+  }
+  .swipe-menu-next {
+    background: linear-gradient(to right, rgba($c36, 0) 0%, $c36 20%, $c36 100%);
+    padding: 0 2rem 0 3rem;
+  }
+}
+
+.is-casino-menu-sticky {
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 11;
+  }
+}

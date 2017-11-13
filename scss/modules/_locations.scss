@@ -1,0 +1,71 @@
+.locations-address {
+  overflow-y: auto;
+  @include -breakpoint(lg) {
+    height: 60.8rem;
+  }
+  @include -breakpoint(lg, down) {
+    order: 1;
+  }
+}
+
+.locations-map {
+  min-height: 32rem;
+  @include -breakpoint(md, down) {
+    min-height: 27rem;
+  }
+}
+
+.locations-item {
+  border: none;
+  box-shadow: 0 1px 0 0 rgba(#c1c1c1, 0.5);
+}
+
+.locations-item-header {
+  height: 5.6rem;
+  @include -breakpoint(md, down) {
+    height: 4.5rem;
+  }
+}
+
+.locations-item-new,
+.locations-item-closed {
+  @include -breakpoint(md, down) {
+    font-size: 1.4rem;
+  }
+}
+
+.locations-item-new {
+  background: $c35;
+}
+
+.locations-item-closed {
+  background: $c45;
+}
+
+.locations-item-heading {
+  @include -breakpoint(xl, down) {
+    font-size: 1.5rem;
+  }
+  @include -breakpoint(md, down) {
+    font-size: 1.3rem;
+  }
+}
+
+.locations-item-arrow {
+  @include -breakpoint(md, down) {
+    color: $c5;
+    font-size: 1.4rem !important;
+  }
+}
+
+.is-locations-item-active {
+  order: -1;
+  .locations-item-arrow {
+    transform: rotateX(180deg);
+  }
+}
+
+.locations-item-service-logo,
+.locations-item-shopping-logo {
+  max-height: 3.2rem;
+}

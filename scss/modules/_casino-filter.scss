@@ -1,0 +1,47 @@
+$ts-casino-filter-padding-h: $ts-spacer;
+
+.casino-filter {
+  border-bottom: 1px solid $c36;
+  .navbar-nav {
+    margin-left: $ts-casino-filter-padding-h * -1;
+    @include -breakpoint(xl, down) {
+      margin-left: $ts-casino-filter-padding-h * -0.5;
+    }
+  }
+  .nav-item {
+    .nav-link {
+      display: inline-block;
+      padding: 1.4rem $ts-casino-filter-padding-h;
+      color: darken($c1, 15%);
+      text-transform: uppercase;
+      @include -breakpoint(xl, down) {
+        padding-right: $ts-casino-filter-padding-h * 0.5;
+        padding-left: $ts-casino-filter-padding-h * 0.5;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        right: $ts-casino-filter-padding-h;
+        bottom: -1px;
+        left: $ts-casino-filter-padding-h;
+        border-bottom: 0.2rem solid transparent;
+        @include -breakpoint(xl, down) {
+          right: $ts-casino-filter-padding-h * 0.5;
+          left: $ts-casino-filter-padding-h * 0.5;
+        }
+      }
+    }
+    &:hover,
+    & a:hover,
+    &.is-active,
+    &.is-active a {
+      color: $c30;
+      .nav-link:before {
+        border-color: $c30;
+      }
+    }
+  }
+}

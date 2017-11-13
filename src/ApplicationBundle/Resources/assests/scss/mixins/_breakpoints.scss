@@ -1,0 +1,26 @@
+@mixin media-breakpoint($bp) {
+
+  //Mobile First
+  @if ($bp == 'xs') {
+    @content
+  }
+  @each $br-name, $br-value in $bp-breakpoints {
+    @if ($bp != 'xs') {
+      @if ($bp == $br-name) {
+        @media (min-width: $br-value) { @content }
+      }
+    }
+  }
+
+  //PC First
+  @each $br-name, $br-value in $bp-breakpoints {
+    @if ($bp != 'xs-down') {
+      @if ($bp == $br-name + '-down') {
+        @media (max-width: $br-value - 1) { @content }
+      }
+    }
+  }
+  @if ($bp == 'xs-down') {
+    @media (max-width: $bp-xs-down) { @content }
+  }
+}

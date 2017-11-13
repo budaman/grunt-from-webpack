@@ -1,0 +1,33 @@
+.top-winnings ul {
+  margin-top: $ts-spacer * -0.5;
+}
+
+.top-winnings-amount {
+  color: $c35;
+}
+
+.top-winnings-item {
+  &:first-child {
+    padding-top: 0;
+  }
+  &:not(:first-child) {
+    border-top: 1px solid rgba($c36, 0.3);
+  }
+  &:hover {
+    .top-winnings-buttons {
+      opacity: 1;
+    }
+  }
+}
+
+.top-winnings-buttons {
+  .btn {
+    margin-top: $ts-spacer * 0.5;
+    padding: 1.7rem 1rem 1.6rem;
+    font-size: 1.4rem;
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+}

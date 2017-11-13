@@ -1,0 +1,9 @@
+.flash-messages {
+  border-radius: 0;
+  .alert {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+}
+
+@include -alerts($ts-custom-flash-messages-colors, true);
