@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const ConcatPlugin = require('webpack-concat-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 const PATHS = {
   app: path.join(__dirname, 'src/ApplicationBundle/Resources/assests/es6'),
@@ -21,7 +22,13 @@ module.exports = {
           test: /\.css$/,
           loader: ExtractTextPlugin.extract({
             fallback: 'style-loader',
-            use: ['css-loader']
+            use: {
+              loader: "css-loader",
+              options: {
+                sourceMap: true,
+                minimize: true
+              }
+            }
           }),
         },
         { // sass / scss loader for webpack
@@ -40,11 +47,17 @@ module.exports = {
     },
   plugins: [
   new ExtractTextPlugin({ // define where to save the file
-     filename: './assets/front/css/screen.css',
+     filename: './assets/front/css/style.min.css',
      allChunks: true,
    }),
+   new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /style.min.css$/g,
+      cssProcessor: require('cssnano'),
+      cssProcessorOptions: { discardComments: { removeAll: true } },
+      canPrint: true
+    }),
   new ConcatPlugin({
-  uglify: true, // or you can set uglifyjs options
+  uglify: false, // or you can set uglifyjs options
   useHash: false, // md5 file
   sourceMap: false, // generate sourceMap
   name: 'flexible', // used in html-webpack-plugin
