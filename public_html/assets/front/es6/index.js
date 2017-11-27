@@ -73,10 +73,18 @@ module.exports = __webpack_require__(2);
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-console.log('labasssss')
+"use strict";
 
+
+console.log('labasssss');
+
+var test = function test() {
+    return 2 * 2;
+};
+
+console.log(test());
 
 /***/ }),
 /* 2 */

@@ -41,8 +41,15 @@ module.exports = {
           query:{
             name:'[name].[ext]',
             outputPath:'assets/front/images/background/'
-        }
-      }
+          }
+        },
+          {
+              test: /\.js$/,
+              loader: 'babel-loader',
+              query: {
+                  presets: ['es2015']
+              }
+          }
       ]
     },
   plugins: [

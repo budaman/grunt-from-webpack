@@ -4,12 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start" : "webpack"
+    "production": "ng build --prod && grunt admin && php app/console assetic:dump",
+    "front": "webpack --watch && grunt pre --host api.topsport.loc  --progress --colors --watch",
+    "copy": "grunt copy",
+    "build-app": "webpack && grunt pre && grunt copy && php app/console assetic:dump",
+    "babel": "babel --presets es2015 src/ApplicationBundle/Resources/assests/es6.index.js -o public_html/assets/front/es6/index.js",
+    "dev": "webpack-dev-server --content-base build_url/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -18,7 +27,8 @@
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "sass-loader": "^6.0.6",
     "webpack": "^3.8.1",
-    "webpack-concat-plugin": "^1.4.2"
+    "webpack-concat-plugin": "^1.4.2",
+    "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
     "jquery": "^3.2.1",

@@ -1,4 +1,5 @@
 .header-bar {
+  display: none;
   height: 7rem;
   @include -breakpoint(md, down) {
     height: $ts-header-height-mobile;
